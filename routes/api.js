@@ -823,14 +823,16 @@ api.post('/uploadBookmarkFile', upload.single('bookmark'), function(req, res) {
 });
 
 api.post('/addBookmark', function(req, res) {
-    console.log("addBookmark username = ", req.session.username);
-    if (!req.session.user) {
+    if (!req.session.username) {
         res.send(401);
         return;
     }
-    var bookmark = req.body.params;
-    var userId = req.session.user.id;
-    var tags = [bookmark.tags[bookmark.tags.length - 1]]; // 只允许添加一个分类
+    var bookmark = req.body;
+
+    let tags=bookmark.tagId.toString()
+
+    var userId = req.session.userId;
+    // var tags = [bookmark.tags[bookmark.tags.length - 1]]; // 只允许添加一个分类
     var bookmarkId = -1;
     var ret = {};
     var update = false;

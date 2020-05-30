@@ -139,7 +139,7 @@ app.controller('bookmarksCtr', ['$scope', '$state', '$stateParams', '$filter', '
     }
 
     $scope.addBookmarkbyFile = function() {
-        console.log("addBookmarkbyFile");
+        console.log("addBookmarkbyFile",111111111);
         $state.go('settings', {
             formIndex: 2,
         });
