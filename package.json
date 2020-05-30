@@ -6,6 +6,7 @@
     "start": "supervisor ./bin/www"
   },
   "dependencies": {
+    "angular-hotkeys": "^1.7.0",
     "body-parser": "~1.15.1",
     "cheerio": "^1.0.0-rc.1",
     "connect-redis": "^3.3.3",
@@ -15,6 +16,7 @@
     "download": "^5.0.3",
     "express": "~4.13.4",
     "express-session": "^1.14.1",
+    "hotkeys-js": "^3.8.1",
     "js-beautify": "^1.6.14",
     "morgan": "^1.8.1",
     "multer": "^1.3.0",

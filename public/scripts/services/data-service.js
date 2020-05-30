@@ -29,11 +29,12 @@ app.factory('dataService', [function() {
             title: '热门'
         }, {
             uiSref: 'settings',
-            title: '设置'
-        }, {
-            uiSref: 'advice',
-            title: '留言'
-        }],
+            title: '设置'}
+        // , {
+        //     uiSref: 'advice',
+        //     title: '留言'
+        // }
+    ],
         notLoginMenus: [{
             uiSref: '/',
             title: '首页'

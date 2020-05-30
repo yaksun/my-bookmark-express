@@ -37,7 +37,12 @@ app.controller('menuCtr', ['$scope', '$stateParams', '$state', '$window', '$time
 
     });
 
+
+   
+
     $scope.toggleReady = function(ready) {
+
+
         if(ready) {
             $(".searchIcon").show();
         } else {
