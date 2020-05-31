@@ -42,3 +42,5 @@ uploads
 /public/images/favicon/
 .tags
 package-lock.json
+
+.idea
