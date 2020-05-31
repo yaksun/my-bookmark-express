@@ -19,7 +19,10 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
         callback: function(event, hotkey) {
 
             event.preventDefault();
-            let temp = event.target.value
+
+            let temp = $('#sInput').val()
+
+            // let temp = event.target.value
             $scope.search(temp, 1)
 
         }
@@ -35,7 +38,7 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
             callback: function(event, hotkey) {
 
                 event.preventDefault();
-                let temp = event.target.value
+                let temp = $('#sInput').val()
                 $scope.search(temp, 4)
 
             }
@@ -49,7 +52,7 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
         callback: function(event, hotkey) {
 
             event.preventDefault();
-            let temp = event.target.value
+            let temp = $('#sInput').val()
             $scope.search(temp, 0)
 
         }
@@ -63,7 +66,7 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
         callback: function(event, hotkey) {
 
             event.preventDefault();
-            let temp = event.target.value
+            let temp = $('#sInput').val()
             $scope.search(temp, 5)
 
         }
@@ -77,7 +80,7 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
         callback: function(event, hotkey) {
 
             event.preventDefault();
-            let temp = event.target.value
+            let temp = $('#sInput').val()
             $scope.search(temp, 2)
 
         }
@@ -91,7 +94,7 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
         callback: function(event, hotkey) {
 
             event.preventDefault();
-            let temp = event.target.value
+            let temp = $('#sInput').val()
             $scope.search(temp, 3)
 
         }
@@ -106,7 +109,7 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
         callback: function(event, hotkey) {
 
             event.preventDefault();
-            let temp = event.target.value
+            let temp = $('#sInput').val()
             $scope.search(temp, 6)
 
         }
