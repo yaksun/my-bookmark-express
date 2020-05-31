@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fac5c028-c419-4872-8da9-245b5d8981c0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/scripts/controllers/menus-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/controllers/menus-controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/menus.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/menus.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,7 +27,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="15" />
+          <entry key="html" value="16" />
           <entry key="js" value="23" />
           <entry key="md" value="2" />
           <entry key="svg" value="1" />
@@ -34,7 +35,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="15" />
+          <entry key="HTML" value="16" />
           <entry key="JavaScript" value="23" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="SVG" value="1" />
@@ -42,7 +43,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="47" />
+          <entry key="html" value="59" />
           <entry key="js" value="641" />
           <entry key="md" value="14" />
           <entry key="svg" value="3" />
@@ -51,7 +52,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="49" />
+          <entry key="HTML" value="61" />
           <entry key="JavaScript" value="639" />
           <entry key="PLAIN_TEXT" value="20" />
           <entry key="SVG" value="3" />
@@ -64,8 +65,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/scripts/controllers/menus-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+            <state relative-caret-position="128">
+              <caret line="402" column="35" lean-forward="true" selection-start-line="402" selection-start-column="35" selection-end-line="402" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -73,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/views/menus.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="51" column="101" selection-start-line="51" selection-start-column="91" selection-end-line="51" selection-end-column="101" />
+            <state relative-caret-position="293">
+              <caret line="52" column="59" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="59" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -119,6 +120,7 @@
       <find>delHistory</find>
       <find>link icon</find>
       <find>searchWord</find>
+      <find>特别</find>
     </findStrings>
     <replaceStrings>
       <replace>http://192.168.1.211:9527</replace>
@@ -132,7 +134,6 @@
       <list>
         <option value="$PROJECT_DIR$/public/views/settings.html" />
         <option value="$PROJECT_DIR$/public/views/home.html" />
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/scripts/controllers/bookmarks-controller.js" />
         <option value="$PROJECT_DIR$/public/scripts/controllers/weixin-article-controller.js" />
         <option value="$PROJECT_DIR$/public/scripts/controllers/tags-controller.js" />
@@ -147,6 +148,7 @@
         <option value="$PROJECT_DIR$/public/scripts/controllers/search-controller.js" />
         <option value="$PROJECT_DIR$/public/scripts/app-angular.js" />
         <option value="$PROJECT_DIR$/public/css/externe/themes/default/assets/fonts/brand-icons.svg" />
+        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/views/menus.html" />
         <option value="$PROJECT_DIR$/public/scripts/controllers/menus-controller.js" />
       </list>
@@ -253,7 +255,7 @@
       <workItem from="1590877429466" duration="7159000" />
       <workItem from="1590897686160" duration="1167000" />
       <workItem from="1590907017325" duration="4744000" />
-      <workItem from="1590925257659" duration="4328000" />
+      <workItem from="1590925257659" duration="5819000" />
     </task>
     <task id="LOCAL-00001" summary="修改热键">
       <created>1590928886894</created>
@@ -266,10 +268,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17398000" />
+    <option name="totallyTimeSpent" value="18889000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19767442" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -285,7 +288,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32982457" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.48421052" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.48421052" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -433,15 +436,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="95" column="36" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
+        <state relative-caret-position="363">
+          <caret line="29" column="40" lean-forward="true" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/views/menus.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="51" column="101" selection-start-line="51" selection-start-column="91" selection-end-line="51" selection-end-column="101" />
+        <state relative-caret-position="293">
+          <caret line="52" column="59" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="59" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -460,8 +463,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/controllers/menus-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+        <state relative-caret-position="128">
+          <caret line="402" column="35" lean-forward="true" selection-start-line="402" selection-start-column="35" selection-end-line="402" selection-end-column="35" />
         </state>
       </provider>
     </entry>

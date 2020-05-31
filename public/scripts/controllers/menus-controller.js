@@ -117,11 +117,6 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
 
 
 
-
-
-
-
-
     // 防止在登陆的情况下，在浏览器里面直接输入url，这时候要更新菜单选项
     pubSubService.subscribe('Common.menuActive', $scope, function (event, params) {
         console.log("subscribe Common.menuActive, login = " + params.login + ", index = " + params.index);
@@ -177,7 +172,7 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
         } else if(item.t === 5) {
             item.icon = "file alternate link icon";
         }else if(item.t === 6) {
-            item.icon = "file  link icon";
+            item.icon = "iconfont iconbiying";
         }
     }
 
