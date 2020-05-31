@@ -2,11 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fac5c028-c419-4872-8da9-245b5d8981c0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/externe/themes/default/assets/fonts/brand-icons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/externe/themes/default/assets/fonts/brand-icons.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/app-angular.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/app-angular.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/controllers/advice-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/controllers/advice-controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/controllers/bookmarks-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/controllers/bookmarks-controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/controllers/home-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/controllers/home-controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/controllers/login-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/controllers/login-controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/controllers/menus-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/controllers/menus-controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/controllers/note-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/controllers/note-controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/controllers/praise-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/controllers/praise-controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/controllers/search-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/controllers/search-controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/controllers/settings-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/controllers/settings-controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/controllers/tags-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/controllers/tags-controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/controllers/weixin-article-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/controllers/weixin-article-controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/views/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/views/menus.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/menus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/views/settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/settings.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,67 +35,53 @@
     <session id="1767164253">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.6" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="3" />
-          <entry key="md" value="1" />
+          <entry key="html" value="13" />
+          <entry key="js" value="23" />
+          <entry key="md" value="2" />
+          <entry key="svg" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="3" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="HTML" value="13" />
+          <entry key="JavaScript" value="23" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="SVG" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="25" />
+          <entry key="html" value="47" />
+          <entry key="js" value="575" />
           <entry key="md" value="14" />
+          <entry key="svg" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="25" />
+          <entry key="HTML" value="49" />
+          <entry key="JavaScript" value="573" />
           <entry key="PLAIN_TEXT" value="14" />
+          <entry key="SVG" value="3" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/views/settings.html">
+        <entry file="file://$PROJECT_DIR$/public/scripts/controllers/menus-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="160" column="28" lean-forward="true" selection-start-line="160" selection-start-column="28" selection-end-line="160" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-              <folding>
-                <element signature="e#2458#2464#0" expanded="true" />
-                <element signature="e#2464#2470#0" expanded="true" />
-                <element signature="e#2471#2477#0" expanded="true" />
-                <element signature="e#2477#2483#0" expanded="true" />
-                <element signature="e#2516#2522#0" expanded="true" />
-                <element signature="e#2522#2528#0" expanded="true" />
-                <element signature="e#2529#2535#0" expanded="true" />
-                <element signature="e#2535#2541#0" expanded="true" />
-                <element signature="e#2627#2633#0" expanded="true" />
-                <element signature="e#2633#2639#0" expanded="true" />
-                <element signature="e#2640#2646#0" expanded="true" />
-                <element signature="e#2646#2652#0" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="229">
+              <caret line="396" column="42" lean-forward="true" selection-start-line="396" selection-start-column="42" selection-end-line="396" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -89,8 +89,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/views/menus.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="649">
-              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+            <state relative-caret-position="363">
+              <caret line="58" column="27" lean-forward="true" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="27" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#span#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#span#1;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,7 +116,26 @@
       <find>网站说明</find>
       <find>changeForm</find>
       <find>changeForm(3)</find>
+      <find>homeCtr</find>
+      <find>bookmarkApp</find>
+      <find>bookmark.cn</find>
+      <find>searchWord</find>
+      <find>http://m.mybookmark.cn</find>
+      <find>www</find>
+      <find>www.baidu</find>
+      <find>https://www.baidu.com/</find>
+      <find>快捷键</find>
+      <find>search</find>
+      <find>bimobject</find>
+      <find>对照更新日志</find>
+      <find>fontawesome</find>
+      <find>stack</find>
+      <find>特别提示</find>
+      <find>delHistory</find>
     </findStrings>
+    <replaceStrings>
+      <replace>http://192.168.1.211:9527</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -113,10 +143,25 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/views/menus.html" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/views/settings.html" />
+        <option value="$PROJECT_DIR$/public/views/home.html" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/public/scripts/controllers/bookmarks-controller.js" />
+        <option value="$PROJECT_DIR$/public/scripts/controllers/weixin-article-controller.js" />
+        <option value="$PROJECT_DIR$/public/scripts/controllers/tags-controller.js" />
+        <option value="$PROJECT_DIR$/public/scripts/controllers/praise-controller.js" />
+        <option value="$PROJECT_DIR$/public/scripts/controllers/home-controller.js" />
+        <option value="$PROJECT_DIR$/public/scripts/controllers/advice-controller.js" />
+        <option value="$PROJECT_DIR$/public/scripts/controllers/login-controller.js" />
+        <option value="$PROJECT_DIR$/public/scripts/controllers/note-controller.js" />
+        <option value="$PROJECT_DIR$/public/scripts/controllers/settings-controller.js" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/public/views/login.html" />
+        <option value="$PROJECT_DIR$/public/scripts/controllers/search-controller.js" />
+        <option value="$PROJECT_DIR$/public/scripts/app-angular.js" />
+        <option value="$PROJECT_DIR$/public/css/externe/themes/default/assets/fonts/brand-icons.svg" />
+        <option value="$PROJECT_DIR$/public/views/menus.html" />
+        <option value="$PROJECT_DIR$/public/scripts/controllers/menus-controller.js" />
       </list>
     </option>
   </component>
@@ -147,6 +192,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -154,11 +200,32 @@
               <item name="my-bookmark-express" type="b2602c69:ProjectViewProjectNode" />
               <item name="my-bookmark-express" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="my-bookmark-express" type="b2602c69:ProjectViewProjectNode" />
+              <item name="my-bookmark-express" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="my-bookmark-express" type="b2602c69:ProjectViewProjectNode" />
+              <item name="my-bookmark-express" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="my-bookmark-express" type="b2602c69:ProjectViewProjectNode" />
+              <item name="my-bookmark-express" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="my-bookmark-express" type="b2602c69:ProjectViewProjectNode" />
+              <item name="my-bookmark-express" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -189,25 +256,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1590877427282</updated>
-      <workItem from="1590877429466" duration="1327000" />
+      <workItem from="1590877429466" duration="7159000" />
+      <workItem from="1590897686160" duration="1167000" />
+      <workItem from="1590907017325" duration="4744000" />
+      <workItem from="1590925257659" duration="3131000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1327000" />
+    <option name="totallyTimeSpent" value="16201000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1050" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="npm" side_tool="true" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19767442" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32982457" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -215,6 +281,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.5169591" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -227,46 +297,164 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/public/views/settings.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        <state relative-caret-position="352">
+          <caret line="160" column="28" lean-forward="true" selection-start-line="160" selection-start-column="28" selection-end-line="160" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/menus.html">
+    <entry file="file://$PROJECT_DIR$/public/views/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="649">
-          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+        <state relative-caret-position="561">
+          <caret line="32" column="6" lean-forward="true" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/externe/angular.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/controllers/bookmarks-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/controllers/weixin-article-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/controllers/tags-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/controllers/praise-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/controllers/home-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/controllers/advice-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/controllers/login-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/controllers/note-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/controllers/settings-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        <state relative-caret-position="121">
+          <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/controllers/search-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="3" column="62" lean-forward="true" selection-start-line="3" selection-start-column="62" selection-end-line="3" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="408" column="20" lean-forward="true" selection-start-line="408" selection-start-column="20" selection-end-line="408" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/app-angular.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="78" column="3" lean-forward="true" selection-start-line="78" selection-start-column="3" selection-end-line="78" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="251" lean-forward="true" selection-start-line="251" selection-end-line="251" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/externe/themes/default/assets/fonts/brand-icons.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/menus.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="58" column="27" lean-forward="true" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="27" />
           <folding>
-            <element signature="e#2458#2464#0" expanded="true" />
-            <element signature="e#2464#2470#0" expanded="true" />
-            <element signature="e#2471#2477#0" expanded="true" />
-            <element signature="e#2477#2483#0" expanded="true" />
-            <element signature="e#2516#2522#0" expanded="true" />
-            <element signature="e#2522#2528#0" expanded="true" />
-            <element signature="e#2529#2535#0" expanded="true" />
-            <element signature="e#2535#2541#0" expanded="true" />
-            <element signature="e#2627#2633#0" expanded="true" />
-            <element signature="e#2633#2639#0" expanded="true" />
-            <element signature="e#2640#2646#0" expanded="true" />
-            <element signature="e#2646#2652#0" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#span#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#span#1;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/settings.html">
+    <entry file="file://$PROJECT_DIR$/public/scripts/controllers/menus-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="160" column="28" lean-forward="true" selection-start-line="160" selection-start-column="28" selection-end-line="160" selection-end-column="28" />
+        <state relative-caret-position="229">
+          <caret line="396" column="42" lean-forward="true" selection-start-line="396" selection-start-column="42" selection-end-line="396" selection-end-column="42" />
         </state>
       </provider>
     </entry>

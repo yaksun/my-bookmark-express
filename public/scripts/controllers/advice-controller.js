@@ -1,7 +1,7 @@
 app.controller('adviceCtr', ['$scope', '$state', '$timeout', 'bookmarkService', 'pubSubService', 'dataService', function($scope, $state, $timeout, bookmarkService, pubSubService, dataService) {
     console.log("Hello adviceCtr");
     if(dataService.smallDevice()){
-        $window.location = "http://m.mybookmark.cn/#/tags";
+        $window.location = "http://192.168.1.211:9527/#/tags";
         return;
     }
     var maxSelections = 3;
@@ -18,7 +18,7 @@ app.controller('adviceCtr', ['$scope', '$state', '$timeout', 'bookmarkService', 
     .catch((err) => {
 
     });
-    
+
     $scope.ok = function() {
         if ($scope.comment == '') {
             toastr.error('留言失败内容不能为空', "错误");

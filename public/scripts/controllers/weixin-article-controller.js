@@ -1,7 +1,7 @@
 app.controller('weixinArticleCtr', ['$scope', '$state', '$sce', '$stateParams', '$filter', '$window', '$timeout', '$document', 'ngDialog', 'bookmarkService', 'pubSubService', 'dataService', function($scope, $state, $sce, $stateParams, $filter, $window, $timeout, $document, ngDialog, bookmarkService, pubSubService, dataService) {
     console.log("Hello weixinArticleCtr...");
     if(dataService.smallDevice()){
-        $window.location = "http://m.mybookmark.cn/#/tags";
+        $window.location = "http://192.168.1.211:9527/#/tags";
         return;
     }
     var key = curentDate(undefined, "yyyyMMdd");
@@ -27,7 +27,7 @@ app.controller('weixinArticleCtr', ['$scope', '$state', '$sce', '$stateParams', 
     $scope.maxCallCount = 100;
     $scope.user = {};
     var timeagoInstance = timeago();
-    
+
     bookmarkService.autoLogin()
         .then((data) => {
             var login = data.logined;

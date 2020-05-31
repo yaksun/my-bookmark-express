@@ -1,4 +1,4 @@
-app.controller('menuCtr', ['$scope', '$stateParams', '$state', '$window', '$timeout', '$document', 'pubSubService', 'bookmarkService', 'dataService', function ($scope, $stateParams, $state, $window, $timeout, $document, pubSubService, bookmarkService, dataService) {
+app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeout', '$document', 'pubSubService', 'bookmarkService', 'dataService','hotkeys', function ($scope, $stateParams, $state, $window, $timeout, $document, pubSubService, bookmarkService, dataService,hotkeys) {
     console.log("Hello menuCtr")
     $scope.login = false; /**< 是否登陆 */
     $scope.selectLoginIndex = 0; /**< 默认登陆之后的选择的菜单索引，下表从 0 开始 */
@@ -10,6 +10,114 @@ app.controller('menuCtr', ['$scope', '$stateParams', '$state', '$window', '$time
     $scope.quickUrl = {};
     $scope.longPress = false;
     $scope.user = {};
+
+    // google搜索
+     hotkeys.add({
+        combo: 'ctrl+g',
+        description: 'This one goes to 11',
+        allowIn: ['INPUT', 'SELECT', 'TEXTAREA'],
+        callback: function(event, hotkey) {
+
+            event.preventDefault();
+            let temp = event.target.value
+            $scope.search(temp, 1)
+
+        }
+    })
+
+
+        // 百度搜索
+        // you can chain these methods for ease of use:
+         hotkeys.add ({
+            combo: 'ctrl+d',
+            description: 'This one goes to 12',
+            allowIn: ['INPUT', 'SELECT', 'TEXTAREA'],
+            callback: function(event, hotkey) {
+
+                event.preventDefault();
+                let temp = event.target.value
+                $scope.search(temp, 4)
+
+            }
+        });
+
+     // 书签搜索
+    hotkeys.add ({
+        combo: 'ctrl+s',
+        description: 'This one goes to 12',
+        allowIn: ['INPUT', 'SELECT', 'TEXTAREA'],
+        callback: function(event, hotkey) {
+
+            event.preventDefault();
+            let temp = event.target.value
+            $scope.search(temp, 0)
+
+        }
+    });
+
+    // 备忘录搜索
+    hotkeys.add ({
+        combo: 'ctrl+m',
+        description: 'This one goes to 12',
+        allowIn: ['INPUT', 'SELECT', 'TEXTAREA'],
+        callback: function(event, hotkey) {
+
+            event.preventDefault();
+            let temp = event.target.value
+            $scope.search(temp, 5)
+
+        }
+    });
+
+    // github搜索
+    hotkeys.add ({
+        combo: 'ctrl+h',
+        description: 'This one goes to 12',
+        allowIn: ['INPUT', 'SELECT', 'TEXTAREA'],
+        callback: function(event, hotkey) {
+
+            event.preventDefault();
+            let temp = event.target.value
+            $scope.search(temp, 2)
+
+        }
+    });
+
+    // 栈溢出搜索
+    hotkeys.add ({
+        combo: 'ctrl+z',
+        description: 'This one goes to 12',
+        allowIn: ['INPUT', 'SELECT', 'TEXTAREA'],
+        callback: function(event, hotkey) {
+
+            event.preventDefault();
+            let temp = event.target.value
+            $scope.search(temp, 3)
+
+        }
+    });
+
+
+    // 必应搜索
+    hotkeys.add ({
+        combo: 'ctrl+b',
+        description: 'This one goes to 12',
+        allowIn: ['INPUT', 'SELECT', 'TEXTAREA'],
+        callback: function(event, hotkey) {
+
+            event.preventDefault();
+            let temp = event.target.value
+            $scope.search(temp, 6)
+
+        }
+    });
+
+
+
+
+
+
+
 
     // 防止在登陆的情况下，在浏览器里面直接输入url，这时候要更新菜单选项
     pubSubService.subscribe('Common.menuActive', $scope, function (event, params) {
@@ -38,7 +146,7 @@ app.controller('menuCtr', ['$scope', '$stateParams', '$state', '$window', '$time
     });
 
 
-   
+
 
     $scope.toggleReady = function(ready) {
 
@@ -65,6 +173,8 @@ app.controller('menuCtr', ['$scope', '$stateParams', '$state', '$window', '$time
             item.icon = "bimobject link icon";
         } else if(item.t === 5) {
             item.icon = "file alternate link icon";
+        }else if(item.t === 6) {
+            item.icon = "file  link icon";
         }
     }
 
@@ -92,7 +202,10 @@ app.controller('menuCtr', ['$scope', '$stateParams', '$state', '$window', '$time
             $window.open('https://www.google.com.hk/#newwindow=1&safe=strict&q=' + encodeURIComponent(searchWord), '_blank');
         } else if (searchOption == 2) {
             $window.open('https://github.com/search?utf8=%E2%9C%93&q=' + encodeURIComponent(searchWord) + '&type=', '_blank');
-        } else if (searchOption == 3) {
+        } else if (searchOption == 6) {
+            $window.open('https://cn.bing.com/search?q=' + encodeURIComponent(searchWord), '_blank');
+        }
+        else if (searchOption == 3) {
             $window.open('https://stackoverflow.com/search?q=' + encodeURIComponent(searchWord), '_blank');
         } else if (searchOption == 4) {
             $window.open('http://www.baidu.com/s?tn=mybookmark.cn&ch=3&ie=utf-8&wd=' + encodeURIComponent(searchWord), '_blank');
@@ -283,7 +396,7 @@ app.controller('menuCtr', ['$scope', '$stateParams', '$state', '$window', '$time
                 title: '操作提示',
                 position: 'bottom center',
                 variation: "very wide",
-                html: "<span><span class='fontred'>特别提示：对照更新日志，如果有更新，请按 Ctrl+F5 强制更新或者清理浏览器缓存！<br/>点击该按钮即可查看更新日志！</span><br/>1、在任意页面，按A键添加备忘录。<br/>2、在热门收藏页面，按R键随机查看热门收藏。<br/>3、在任意页面，按数字键切换菜单栏。<br/>4、在书签页面鼠标放在书签上，按C复制书签链接<br/>5、在书签页面鼠标放在书签上，按E编辑书签<br/>6、在书签页面鼠标放在书签上，按D删除书签<br/>7、在书签页面鼠标放在书签上，按I查看书签详情<br/>8、在任意页面，按INSERT做添加书签<br/>9、在任意页面，按ESC退出弹窗<br/></span>"
+                html: "<span><span class='fontred'>特别提示：对照更新日志，如果有更新，请按 Ctrl+F5 强制更新或者清理浏览器缓存！<br/>点击该按钮即可查看更新日志！</span><br/>01、在任意页面，按A键添加备忘录。<br/>02、在热门收藏页面，按R键随机查看热门收藏。<br/>03、在任意页面，按数字键切换菜单栏。<br/>04、在书签页面鼠标放在书签上，按C复制书签链接<br/>05、在书签页面鼠标放在书签上，按E编辑书签<br/>06、在书签页面鼠标放在书签上，按D删除书签<br/>07、在书签页面鼠标放在书签上，按I查看书签详情<br/>08、在任意页面，按INSERT做添加书签<br/>09、在任意页面，按ESC退出弹窗<br/>10、当搜索框输入内容后,按下ctrl+g或enter跳转到google搜索<br/>11、当搜索框输入内容后,按下ctrl+d跳转到百度搜索<br/>12、当搜索框输入内容后,按下ctrl+b跳转到必应搜索<br/>13、当搜索框输入内容后,按下ctrl+h跳转到github搜索<br/>14、当搜索框输入内容后,按下ctrl+s跳转到书签搜索<br/>15、当搜索框输入内容后,按下ctrl+m跳转到备忘录搜索<br/>16、当搜索框输入内容后,按下ctrl+z跳转到栈溢出搜索<br/></span>"
             });
     }, 1000)
 
@@ -364,7 +477,7 @@ app.controller('menuCtr', ['$scope', '$stateParams', '$state', '$window', '$time
                             }
                         })
                         .catch((err) => {
-                            
+
                         });
                     }
                 }

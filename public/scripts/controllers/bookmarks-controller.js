@@ -1,7 +1,7 @@
 app.controller('bookmarksCtr', ['$scope', '$state', '$stateParams', '$filter', '$window', '$timeout', '$document', 'ngDialog', 'bookmarkService', 'pubSubService', 'dataService', function($scope, $state, $stateParams, $filter, $window, $timeout, $document, ngDialog, bookmarkService, pubSubService, dataService) {
     console.log("Hello bookmarksCtr...", $stateParams);
     if(dataService.smallDevice()){
-        $window.location = "http://m.mybookmark.cn/#/tags";
+        $window.location = "http://192.168.1.211:9527/#/tags";
         return;
     }
 
@@ -340,7 +340,7 @@ app.controller('bookmarksCtr', ['$scope', '$state', '$stateParams', '$filter', '
                     $scope.forbidTransition = false;
                     $scope.loadBusy = false;
                 })
-                .catch((err) => { 
+                .catch((err) => {
                     dataService.netErrorHandle(err, $state);
                     $scope.loadBusy = false;
                 });
