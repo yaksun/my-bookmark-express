@@ -42,7 +42,7 @@ app.controller('loginCtr', ['$scope', '$filter', '$state', '$cookieStore', '$win
                         pubSubService.publish('loginCtr.login', {
                             'login': data.logined,
                         });
-                        $state.go('bookmarks', {})
+                        $state.go('tags', {})
                     } else {
                         console.log('login failed......................')
                         toastr.error('账号或者密码错误', "错误");

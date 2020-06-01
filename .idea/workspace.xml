@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fac5c028-c419-4872-8da9-245b5d8981c0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/css/font/S6u8w4BMUTPHjxsAUi-qJCY.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/font/S6u8w4BMUTPHjxsAXC-q.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/font/S6u9w4BMUTPHh6UVSwaPGR_p.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/font/S6u9w4BMUTPHh6UVSwiPGQ.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/font/S6u_w4BMUTPHjxsI5wq_FQft1dw.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/font/S6u_w4BMUTPHjxsI5wq_Gwft.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/font/S6uyw4BMUTPHjx4wXg.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/font/S6uyw4BMUTPHjxAwXjeu.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/externe/semantic.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/externe/semantic.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/controllers/login-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/controllers/login-controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/scripts/controllers/menus-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/controllers/menus-controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/views/menus.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/views/menus.html" afterDir="false" />
     </list>
@@ -19,32 +30,36 @@
     <session id="1767164253">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.6" value="3" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="16" />
-          <entry key="js" value="23" />
+          <entry key="css" value="2" />
+          <entry key="html" value="18" />
+          <entry key="js" value="28" />
           <entry key="md" value="2" />
           <entry key="svg" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="16" />
-          <entry key="JavaScript" value="23" />
+          <entry key="CSS" value="2" />
+          <entry key="HTML" value="18" />
+          <entry key="JavaScript" value="28" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="SVG" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="59" />
-          <entry key="js" value="641" />
+          <entry key="css" value="135" />
+          <entry key="html" value="74" />
+          <entry key="js" value="656" />
           <entry key="md" value="14" />
           <entry key="svg" value="3" />
           <entry key="txt" value="6" />
@@ -52,8 +67,9 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="61" />
-          <entry key="JavaScript" value="639" />
+          <entry key="CSS" value="135" />
+          <entry key="HTML" value="76" />
+          <entry key="JavaScript" value="654" />
           <entry key="PLAIN_TEXT" value="20" />
           <entry key="SVG" value="3" />
         </counts>
@@ -65,8 +81,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/scripts/controllers/menus-controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="402" column="35" lean-forward="true" selection-start-line="402" selection-start-column="35" selection-end-line="402" selection-end-column="35" />
+            <state relative-caret-position="69">
+              <caret line="121" column="43" lean-forward="true" selection-start-line="121" selection-start-column="43" selection-end-line="121" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -74,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/views/menus.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="52" column="59" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="59" />
+            <state relative-caret-position="231">
+              <caret line="55" column="27" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -88,7 +104,17 @@
                 <element signature="n#style#0;n#i#0;n#span#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#0;n#span#1;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#0;n#span#2;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#span#3;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="30" column="40" lean-forward="true" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -116,11 +142,13 @@
       <find>对照更新日志</find>
       <find>fontawesome</find>
       <find>stack</find>
-      <find>特别提示</find>
       <find>delHistory</find>
       <find>link icon</find>
       <find>searchWord</find>
       <find>特别</find>
+      <find>bookmarks</find>
+      <find>fonts.gstatic.com</find>
+      <find>特别提示</find>
     </findStrings>
     <replaceStrings>
       <replace>http://192.168.1.211:9527</replace>
@@ -140,7 +168,6 @@
         <option value="$PROJECT_DIR$/public/scripts/controllers/praise-controller.js" />
         <option value="$PROJECT_DIR$/public/scripts/controllers/home-controller.js" />
         <option value="$PROJECT_DIR$/public/scripts/controllers/advice-controller.js" />
-        <option value="$PROJECT_DIR$/public/scripts/controllers/login-controller.js" />
         <option value="$PROJECT_DIR$/public/scripts/controllers/note-controller.js" />
         <option value="$PROJECT_DIR$/public/scripts/controllers/settings-controller.js" />
         <option value="$PROJECT_DIR$/README.md" />
@@ -148,6 +175,10 @@
         <option value="$PROJECT_DIR$/public/scripts/controllers/search-controller.js" />
         <option value="$PROJECT_DIR$/public/scripts/app-angular.js" />
         <option value="$PROJECT_DIR$/public/css/externe/themes/default/assets/fonts/brand-icons.svg" />
+        <option value="$PROJECT_DIR$/public/scripts/controllers/login-controller.js" />
+        <option value="$PROJECT_DIR$/public/css/externe/semantic.min.css" />
+        <option value="$PROJECT_DIR$/public/css/font/css.css" />
+        <option value="$PROJECT_DIR$/database/db.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/views/menus.html" />
         <option value="$PROJECT_DIR$/public/scripts/controllers/menus-controller.js" />
@@ -181,7 +212,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -204,13 +234,6 @@
               <item name="my-bookmark-express" type="b2602c69:ProjectViewProjectNode" />
               <item name="my-bookmark-express" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my-bookmark-express" type="b2602c69:ProjectViewProjectNode" />
-              <item name="my-bookmark-express" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -222,13 +245,22 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/working/avue-data" />
+    <property name="last_opened_file_path" value="D:/dev_tools/chrome-plugin-demo-master/chrome-plugin-demo-master/full-chrome-plugin-demo" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\temp01\my-bookmark-express\public\css\font" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\temp01\my-bookmark-express\public\css\font" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -255,7 +287,8 @@
       <workItem from="1590877429466" duration="7159000" />
       <workItem from="1590897686160" duration="1167000" />
       <workItem from="1590907017325" duration="4744000" />
-      <workItem from="1590925257659" duration="5819000" />
+      <workItem from="1590925257659" duration="6424000" />
+      <workItem from="1590971470537" duration="2924000" />
     </task>
     <task id="LOCAL-00001" summary="修改热键">
       <created>1590928886894</created>
@@ -268,11 +301,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18889000" />
+    <option name="totallyTimeSpent" value="22418000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1050" extended-state="7" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19767442" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -288,7 +320,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32982457" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.48421052" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.69005847" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -368,13 +400,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/controllers/login-controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/controllers/note-controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
@@ -410,20 +435,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="408" column="20" lean-forward="true" selection-start-line="408" selection-start-column="20" selection-end-line="408" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/app-angular.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="78" column="3" lean-forward="true" selection-start-line="78" selection-start-column="3" selection-end-line="78" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -434,17 +445,52 @@
     <entry file="file://$PROJECT_DIR$/public/css/externe/themes/default/assets/fonts/brand-icons.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/app-angular.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="78" column="3" lean-forward="true" selection-start-line="78" selection-start-column="3" selection-end-line="78" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/externe/semantic.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="13" column="46" lean-forward="true" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-295">
+          <caret line="51" column="28" lean-forward="true" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/font/css.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="54" column="46" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/controllers/login-controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="43" column="27" lean-forward="true" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="29" column="40" lean-forward="true" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+        <state relative-caret-position="396">
+          <caret line="30" column="40" lean-forward="true" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/views/menus.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="52" column="59" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="59" />
+        <state relative-caret-position="231">
+          <caret line="55" column="27" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -457,14 +503,15 @@
             <element signature="n#style#0;n#i#0;n#span#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#span#1;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#span#2;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#span#3;n#span#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/controllers/menus-controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="402" column="35" lean-forward="true" selection-start-line="402" selection-start-column="35" selection-end-line="402" selection-end-column="35" />
+        <state relative-caret-position="69">
+          <caret line="121" column="43" lean-forward="true" selection-start-line="121" selection-start-column="43" selection-end-line="121" selection-end-column="43" />
         </state>
       </provider>
     </entry>
