@@ -22,7 +22,7 @@ app.controller('editCtr', ['$scope', '$state', '$timeout', '$document', 'ngDialo
                         $scope.loadTitle = false;
                         $scope.originTitle = data.title;
                         $scope.title = data.title;
-                        
+
                         if (!$scope.title) {
                             toastr.error('获取书签标题失败，请手动填入', "提示");
                         } else {
@@ -121,17 +121,20 @@ app.controller('editCtr', ['$scope', '$state', '$timeout', '$document', 'ngDialo
     }
 
     $scope.showAddTag = function() {
-        if ($scope.tags.length < 30) {
-            console.log('showAddTag..........')
-            $scope.newTag = "";
-            dialog = ngDialog.open({
-                template: './views/dialog-add-tag.html',
-                className: 'ngdialog-theme-default',
-                scope: $scope
-            });
-        } else {
-            toastr.error('标签个数总数不能超过30个！不允许再添加新分类，如有需求，请联系管理员。', "提示");
-        }
+        // if ($scope.tags.length < 30) {
+        //
+        // } else {
+        //     toastr.error('标签个数总数不能超过30个！不允许再添加新分类，如有需求，请联系管理员。', "提示");
+        // }
+
+
+        console.log('showAddTag..........')
+        $scope.newTag = "";
+        dialog = ngDialog.open({
+            template: './views/dialog-add-tag.html',
+            className: 'ngdialog-theme-default',
+            scope: $scope
+        });
     }
 
     $scope.addTag = function(tag) {
@@ -185,9 +188,15 @@ app.controller('editCtr', ['$scope', '$state', '$timeout', '$document', 'ngDialo
     }
 
     $scope.clickTag = function(id, clicked) {
+
         $scope.tags.forEach((tag) => {
             tag.clicked = tag.id == id
         })
+
+
+
+
+
     }
 
     pubSubService.subscribe('MenuCtr.showAddBookmarkMoadl', $scope, function(event, params) {
