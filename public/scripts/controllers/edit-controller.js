@@ -307,6 +307,7 @@ app.controller('editCtr', ['$scope', '$state', '$timeout', '$document', 'ngDialo
                 if ($scope.add && data.length >= 1 && $scope.url == '' && $scope.title == '') {
                     data[0].clicked = true;
                 }
+
                 $scope.tags = data;
                 $scope.loadTags = false;
             })

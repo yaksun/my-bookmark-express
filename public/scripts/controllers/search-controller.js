@@ -72,7 +72,10 @@ app.controller('searchCtr', ['$scope', '$state', '$stateParams', '$filter', '$wi
             $scope.searchBookmarks.forEach(function(bookmark) {
                 if (bookmark.id == id && bookmark.own) {
                     bookmark.click_count += 1;
-                    bookmark.last_click = $filter("date")(new Date(), "yyyy-MM-dd HH:mm:ss");
+                    // bookmark.last_click = $filter("date")(new Date(), "yyyy-MM-dd HH:mm:ss");
+
+                    bookmark.last_click = $scope.dateFormat("date")(new Date(), "yyyy-MM-dd HH:mm:ss");
+
                 }
             })
             $timeout(function() {
@@ -80,6 +83,28 @@ app.controller('searchCtr', ['$scope', '$state', '$stateParams', '$filter', '$wi
                 timeagoInstance.render(document.querySelectorAll('.need_to_be_rendered'), 'zh_CN');
             }, 100)
         }
+    }
+
+
+    $scope.dateFormat = function (date, format) {
+        date = new Date(date);
+        var o = {
+            'M+' : date.getMonth() + 1, //month
+            'd+' : date.getDate(), //day
+            'H+' : date.getHours()+8, //hour+8小时
+            'm+' : date.getMinutes(), //minute
+            's+' : date.getSeconds(), //second
+            'q+' : Math.floor((date.getMonth() + 3) / 3), //quarter
+            'S' : date.getMilliseconds() //millisecond
+        };
+        if (/(y+)/.test(format))
+            format = format.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));
+
+        for (var k in o)
+            if (new RegExp('(' + k + ')').test(format))
+                format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ('00' + o[k]).substr(('' + o[k]).length));
+
+        return format;
     }
 
     $scope.delBookmark = function(bookmark) {
@@ -268,8 +293,12 @@ app.controller('searchCtr', ['$scope', '$state', '$stateParams', '$filter', '$wi
                             id: -1,
                             name: bookmark.created_by, // 给转存用
                         }]
-                        bookmark.created_at = $filter('date')(new Date(bookmark.created_at), "yyyy-MM-dd HH:mm:ss");
-                        bookmark.last_click = $filter('date')(new Date(bookmark.last_click), "yyyy-MM-dd HH:mm:ss");
+                        // bookmark.created_at = $filter('date')(new Date(bookmark.created_at), "yyyy-MM-dd HH:mm:ss");
+                        // bookmark.last_click = $filter('date')(new Date(bookmark.last_click), "yyyy-MM-dd HH:mm:ss");
+
+                        bookmark.created_at = $scope.dateFormat('date')(new Date(bookmark.created_at), "yyyy-MM-dd HH:mm:ss");
+                        bookmark.last_click = $scope.dateFormat('date')(new Date(bookmark.last_click), "yyyy-MM-dd HH:mm:ss");
+
                         $scope.searchBookmarks.push(bookmark);
                     })
                     $scope.bookmarkCount = data.totalItems;

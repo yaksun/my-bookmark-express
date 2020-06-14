@@ -100,9 +100,11 @@ app.controller('tagsCtr', ['$scope', '$filter', '$state', '$window', '$statePara
         $scope.costomTag.bookmarkClicked = false;
         $scope.costomAllUsersTag.bookmarkClicked = false;
 
-        perPageItems = ($scope.showMode == 'item') ? 50 : 20;
+        // perPageItems = ($scope.showMode == 'item') ? 100 : 50;
 
-        $scope.tags.forEach(function (tag) {
+        perPageItems = 100;
+
+            $scope.tags.forEach(function (tag) {
             tag.bookmarkClicked = false;
             if (tag.id == tagId) {
                 tag.bookmarkClicked = true;
@@ -503,6 +505,8 @@ app.controller('tagsCtr', ['$scope', '$filter', '$state', '$window', '$statePara
                         find = true; // 如果是删了分类返回来，那么要重新默认选中第一个分类
                     }
                 })
+
+
                 if (!find && $scope.currentTagId !== -1 && $scope.currentTagId !== -2) {
                     $scope.currentTagId = -1;
                     $scope.costomTag.bookmarkClicked = true;
