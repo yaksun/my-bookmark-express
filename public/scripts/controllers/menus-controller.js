@@ -173,8 +173,6 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
     });
 
 
-
-
     $scope.toggleReady = function(ready) {
 
 
