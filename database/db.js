@@ -353,7 +353,7 @@ db.getSearchUrl = function(userId){
             if (err) {
                 reject(err);
             } else {
-                resolve(result[0]);
+                resolve(result);
             }
         });
     });

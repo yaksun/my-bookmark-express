@@ -5,6 +5,8 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
         return;
     }
 
+  
+
     $scope.forbidQuickKey = dataService.forbidQuickKey
     $scope.form = [false, false, false, false, false, false, false];
     $scope.passwordOrgin = "";
@@ -22,6 +24,7 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
     $scope.icon_class = '';
     $scope.search_url='';
     $scope.searchParams={}
+    $scope.searchUrl=[]
 
     $scope.quickUrl = {};
     $scope.browserNormal = {};
@@ -102,6 +105,10 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
         if (index == 5) {
             $scope.logsUrl = 'https://github.com/luchenqun/my-bookmark/commits/master'
             $scope.getUpdateLog($scope.logsUrl);
+        }
+
+        if(index == 6){
+           getSearchUrl()
         }
     }
 
@@ -218,7 +225,14 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
     }
 
 
-    
+    function getSearchUrl(){
+        bookmarkService.getSearchUrl().then(data=>{
+            $scope.searchUrl = data.res 
+        })
+    }
+
+
+    // 添加搜索地址
     $scope.addSearchUrl = function() {
         if ($scope.search_url == '' || $scope.title == '') {
             toastr.warning('标题或网站地址为空！', "警告");

@@ -378,6 +378,23 @@ app.factory('bookmarkService', ['$http', '$q', function($http, $q) {
                 });
             return def.promise;
         },
+
+        // 获取搜索引擎
+        getSearchUrl: function() {
+            var def = $q.defer();
+            $http.get('/api/getSearchUrl?time='+Date.now() )
+                .success(function(data) {
+                    console.log(data,99999999);
+                    def.resolve(data);
+                })
+                .error(function(data) {
+                    def.reject(data);
+                });
+            return def.promise;
+        },
+
+
+        // 添加搜索引擎
         addSearchUrl: function(params) {
             var def = $q.defer();
             $http.post('/api/addSearchUrl/',params)

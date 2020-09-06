@@ -281,6 +281,34 @@ api.post('/updateQuickUrl', function(req, res) {
         });
 });
 
+api.get('/getSearchUrl',function(req,res){
+   
+    if (!req.session.user) {
+        res.send(401);
+        return;
+    }
+  
+    db.getUser(req.session.user.username)
+        .then(  (user) => {
+            if (user) {
+                return  db.getSearchUrl(req.session.user.id)
+            } else {
+                return Promise.resolve(0)
+            }
+        })
+        .then((affectedRows) => {
+            res.json({
+               res:affectedRows
+            })
+        })
+        .catch((err) => {
+            console.log('resetPassword error', err);
+            res.json({
+                retCode: 2
+            })
+        });
+
+})
 
 api.post('/addSearchUrl', function(req, res) {
     console.log("========addSearchUrl username = ", req.session.user.id);
