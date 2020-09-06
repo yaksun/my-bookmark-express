@@ -214,6 +214,11 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
      */
     $scope.search = function (searchWord, searchOption) {
         console.log('search......', searchWord);
+
+        if(searchOption == undefined ){
+            console.log('没有配置默认浏览器');
+        }
+
         if (!searchWord) {
             toastr.error('请输入搜索关键字', "错误");
             return;
@@ -231,18 +236,18 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
         } else if (searchOption == 1) {
             $window.open('https://www.google.com.hk/#newwindow=1&safe=strict&q=' + encodeURIComponent(searchWord), '_blank');
         } else if (searchOption == 2) {
-            $window.open('https://github.com/search?utf8=%E2%9C%93&q=' + encodeURIComponent(searchWord) + '&type=', '_blank');
+            $window.open('https://github.com/search?q=' + encodeURIComponent(searchWord), '_blank');
         } else if (searchOption == 6) {
             $window.open('https://cn.bing.com/search?q=' + encodeURIComponent(searchWord), '_blank');
         } else if (searchOption == 7) {
             $window.open('https://www.toutiao.com/search/?keyword=' + encodeURIComponent(searchWord), '_blank');
         } else if (searchOption == 8) {
-            $window.open('https://search.gitee.com/?skin=rec&type=repository&q=xxxxxx&repo=&reponame=' + searchWord, '_blank');
+            $window.open('https://search.gitee.com/?q=' + encodeURIComponent(searchWord), '_blank');
         }
         else if (searchOption == 3) {
             $window.open('https://stackoverflow.com/search?q=' + encodeURIComponent(searchWord), '_blank');
         } else if (searchOption == 4) {
-            $window.open('http://www.baidu.com/s?tn=mybookmark.cn&ch=3&ie=utf-8&wd=' + encodeURIComponent(searchWord), '_blank');
+            $window.open('http://www.baidu.com/s?wd=' + encodeURIComponent(searchWord), '_blank');
         } else if (searchOption == 5) {
             console.log('search note, word = ', searchWord);
             $state.go('note', {

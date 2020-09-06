@@ -378,6 +378,8 @@ app.factory('bookmarkService', ['$http', '$q', function($http, $q) {
                 });
             return def.promise;
         },
+
+      
         getAdvices: function(params) {
             var def = $q.defer();
             $http.get('/api/advices/', {

@@ -17,7 +17,14 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
     $scope.form[($stateParams && $stateParams.formIndex) || 0] = true;
     $scope.key = '';
     $scope.url = '';
+
+    $scope.title='';
+    $scope.icon_class = '';
+    $scope.search_url='';
+    $scope.search_params={}
+
     $scope.quickUrl = {};
+    $scope.browserNormal = {};
     $scope.updateLogs = [];
     $scope.logsUrl = 'https://github.com/luchenqun/my-bookmark/commits/master';
     $scope.loadingLogs = false;
@@ -208,6 +215,10 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
         $scope.key = '';
     }
 
+    $scope.addSearchUrl=function(){
+        
+    }
+
     $scope.delUrl = function(key) {
         delete $scope.quickUrl[key];
         saveQuickUrl();
@@ -264,7 +275,7 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
         login: true,
         index: dataService.LoginIndexSettings
     });
-
+   
     function saveQuickUrl() {
         var parmes = {
             quickUrl: JSON.stringify($scope.quickUrl),
@@ -284,6 +295,8 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
                 toastr.error('全局快捷键更新失败。错误信息：' + JSON.stringify(err), "错误");
             });
     }
+
+
 
     dataService.transition('.js-segment-settings');
 }]);
