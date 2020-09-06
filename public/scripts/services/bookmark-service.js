@@ -378,6 +378,18 @@ app.factory('bookmarkService', ['$http', '$q', function($http, $q) {
                 });
             return def.promise;
         },
+        addSearchUrl: function(params) {
+            var def = $q.defer();
+            $http.post('/api/addSearchUrl/',params)
+                .success(function(data) {
+                    def.resolve(data);
+                })
+                .error(function(data) {
+                    def.reject(data);
+                });
+            return def.promise;
+        },
+
 
       
         getAdvices: function(params) {

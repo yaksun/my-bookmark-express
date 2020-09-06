@@ -21,7 +21,7 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
     $scope.title='';
     $scope.icon_class = '';
     $scope.search_url='';
-    $scope.search_params={}
+    $scope.searchParams={}
 
     $scope.quickUrl = {};
     $scope.browserNormal = {};
@@ -177,6 +177,8 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
         });
     }
 
+
+
     $scope.addQuickUrl = function() {
         if ($scope.url == '' || $scope.key == '') {
             toastr.warning('快捷键或者网站地址为空！', "警告");
@@ -215,9 +217,22 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
         $scope.key = '';
     }
 
-    $scope.addSearchUrl=function(){
-        
+
+    
+    $scope.addSearchUrl = function() {
+        if ($scope.search_url == '' || $scope.title == '') {
+            toastr.warning('标题或网站地址为空！', "警告");
+        }
+
+        $scope.searchParams['title'] = $scope.title;
+        $scope.searchParams['search_url'] = $scope.search_url;
+
+        saveSearchUrl();
+        $scope.title = '';
+        $scope.search_url = '';
     }
+
+
 
     $scope.delUrl = function(key) {
         delete $scope.quickUrl[key];
@@ -293,6 +308,24 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
             })
             .catch((err) => {
                 toastr.error('全局快捷键更新失败。错误信息：' + JSON.stringify(err), "错误");
+            });
+    }
+
+    function saveSearchUrl() {
+        var parmes = $scope.searchParams;
+        bookmarkService.addSearchUrl(parmes)
+            .then((data) => {
+                if (data.retCode == 0) {
+                    toastr.success('快捷搜索引擎添加成功', "提示");
+                    pubSubService.publish('Settings.searchUrl', {
+                        searchUrl: $scope.searchUrl
+                    });
+                } else {
+                    toastr.error('快捷搜索引擎添加失败。错误信息：' + data.msg, "错误");
+                }
+            })
+            .catch((err) => {
+                toastr.error('快捷搜索引擎添加失败。错误信息：' + JSON.stringify(err), "错误");
             });
     }
 

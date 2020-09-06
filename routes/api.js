@@ -281,6 +281,40 @@ api.post('/updateQuickUrl', function(req, res) {
         });
 });
 
+
+api.post('/addSearchUrl', function(req, res) {
+    console.log("========addSearchUrl username = ", req.session.user.id);
+    if (!req.session.user) {
+        res.send(401);
+        return;
+    }
+
+    var params = req.body;
+    console.log(params,'===========');
+  
+    db.getUser(req.session.user.username)
+        .then((user) => {
+            if (user) {
+                return db.addSearchUrl(req.session.userId, params)
+            } else {
+                return Promise.resolve(0)
+            }
+        })
+        .then((affectedRows) => {
+            res.json({
+                retCode: (affectedRows == 1 ? 0 : 1),
+                msg: req.session.username + " 添加快捷搜索成功！",
+            })
+        })
+        .catch((err) => {
+            console.log('resetPassword error', err);
+            res.json({
+                retCode: 2,
+                msg: req.session.username + " 添加快捷搜索失败！: " + JSON.stringify(err),
+            })
+        });
+});
+
 api.get('/autoLogin', function(req, res) {
     console.log("autoLogin username = ", req.session.username);
     var ret = {
