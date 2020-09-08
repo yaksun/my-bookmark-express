@@ -271,6 +271,9 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
     }
 
 
+    $scope.editSearchUrl= function(item){
+        console.log(item,'===========');
+    }
 
     $scope.delUrl = function(key) {
         delete $scope.quickUrl[key];

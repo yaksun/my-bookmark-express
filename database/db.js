@@ -361,7 +361,7 @@ db.getSearchUrl = function(userId){
 
 // 添加搜索链接
 db.addSearchUrl = function(userId, params) {
-    var sql = "INSERT INTO `setting_search` (`user_id`, `title`, `search_url`,`icon_class`) VALUES ('" + userId + "', " + client.escape(params.title) + ", "+ client.escape(params.icon_class) + ", " + client.escape(params.search_url) + ")";
+    var sql = "INSERT INTO `setting_search` (`user_id`, `title`, `search_url`,`icon_class`) VALUES ('" + userId + "', " + client.escape(params.title) + ", "+ client.escape(params.search_url) + ", " + client.escape(params.icon_class) + ")";
 
     console.log('addSearchUrl', sql);
     return new Promise(function(resolve, reject) {
@@ -388,6 +388,22 @@ db.delSearchUrl = function(id) {
         });
     });
 }
+
+db.updateSearchUrl = function(id, params) {
+    
+    var sql = "UPDATE `setting_search` SET `title`='" + params.title + "', `search_url`=" + client.escape(params.search_url) + ", `icon_class`='" + params.icon_class +  " WHERE (`id`='" + id + "')";
+    console.log('updateSearchUrl', sql);
+    return new Promise(function(resolve, reject) {
+        client.query(sql, (err, result) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(result.affectedRows);
+            }
+        });
+    });
+};
+
 
 
 

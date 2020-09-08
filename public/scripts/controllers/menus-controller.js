@@ -10,7 +10,11 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
     $scope.quickUrl = {};
     $scope.longPress = false;
     $scope.user = {};
+    $scope.searchUrl=[] 
 
+
+
+    getSearchUrl() 
     // google搜索
      hotkeys.add({
         combo: 'ctrl+g',
@@ -172,6 +176,13 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
 
     });
 
+    
+    function getSearchUrl(){
+        bookmarkService.getSearchUrl().then(data=>{
+            console.log(data.res,'----------');
+            $scope.searchUrl = data.res 
+        })
+    }
 
     $scope.toggleReady = function(ready) {
 

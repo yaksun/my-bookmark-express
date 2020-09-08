@@ -249,7 +249,7 @@
                             <th style="width:100px;">标题</th>
                             <th style="width:150px;">图标样式</th>
                             <th>快捷搜索地址</th>
-                            <th style="width:45px;">操作</th>
+                            <th style="width:100px;">操作</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -258,7 +258,9 @@
                             <td>{{item.icon_class}}</td>
                             <td> {{item.search_url}} </td>
                             <td>
-                                <img class="ui mini spaced image" style="width:16px;height:16px;margin:0 1px" ng-src="./images/delete.png" ng-click="delSearchUrl(item)" title="删除搜索引擎">
+                                <img class="ui mini spaced image" style="width:16px;height:16px;margin:0 1px" ng-src="./images/delete.png" ng-click="delSearchUrl(item)" title="删除搜索链接">
+                                <!-- <img class="ui mini spaced image" style="width:16px;height:16px;margin:0 1px" ng-src="./images/edit-bookmark.png" ng-click="editSearchUrl(item)"
+                                title="编辑搜索链接"> -->
                             </td>
                         </tr>
                     </tbody>

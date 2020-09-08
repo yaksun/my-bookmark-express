@@ -47,8 +47,9 @@
                     </div>
                 </div>
                 <div style="margin-top: 13px;">
-                    <span style="display: none" class="searchIcon">
-                        <span><i class="bimobject link icon" title="百度搜索(输入关键字按回车键默认搜索引擎)" ng-click="search(searchWord, 4)" style="cursor:default;margin-right: 8px;"></i></span>
+                    <span style="display: none" class="searchIcon" >
+                        <span ng-repeat="item in searchUrl"><i  ng-class="{{item.icon_class}}" ng-title="{{item.title}}" ng-click="search(searchWord, 1)" style="cursor:default;margin-right: 8px;"></i></span>
+                        <!-- <span><i class="bimobject link icon" title="百度搜索(输入关键字按回车键默认搜索引擎)" ng-click="search(searchWord, 4)" style="cursor:default;margin-right: 8px;"></i></span>
                         <span ><i class="google link icon" title="谷歌搜索" ng-click="search(searchWord, 1)" style="cursor:default;margin-right: 8px;"></i></span>
                         <span><i class="iconfont iconbiying" title="必应搜索" ng-click="search(searchWord, 6)" style="cursor:default;margin-right: 8px;"></i></span>
                         <span><i class="iconfont iconziyuan" title="头条搜索" ng-click="search(searchWord, 7)" style="cursor:default;margin-right: 8px;"></i></span>
@@ -56,7 +57,7 @@
                         <span><i class="book link icon" title="书签搜索" ng-click="search(searchWord, 0)" style="cursor:default;margin-right: 8px;"></i></span>
                         <span><i class="file alternate link icon" title="备忘录搜索" ng-click="search(searchWord, 5)" style="cursor:default;margin-right: 8px;"></i></span>
                         <span><i class="github link icon" title="Github 搜索" ng-click="search(searchWord, 2)" style="cursor:default;margin-right: 8px;"></i></span>
-                        <span><i class="stack overflow link icon" title="栈溢出搜索" ng-click="search(searchWord, 3)" style="cursor:default;margin-right: 8px;"></i></span>
+                        <span><i class="stack overflow link icon" title="栈溢出搜索" ng-click="search(searchWord, 3)" style="cursor:default;margin-right: 8px;"></i></span> -->
                         <span style="margin: 0px 5px">▏</span>
                     </span>
                     <span data-tooltip="添加书签，可按Insert快速打开添加页面" ng-click="showAddBookmarkMoadl()">
