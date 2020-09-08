@@ -384,7 +384,6 @@ app.factory('bookmarkService', ['$http', '$q', function($http, $q) {
             var def = $q.defer();
             $http.get('/api/getSearchUrl?time='+Date.now() )
                 .success(function(data) {
-                    console.log(data,99999999);
                     def.resolve(data);
                 })
                 .error(function(data) {
@@ -398,6 +397,21 @@ app.factory('bookmarkService', ['$http', '$q', function($http, $q) {
         addSearchUrl: function(params) {
             var def = $q.defer();
             $http.post('/api/addSearchUrl/',params)
+                .success(function(data) {
+                    def.resolve(data);
+                })
+                .error(function(data) {
+                    def.reject(data);
+                });
+            return def.promise;
+        },
+
+         // 删除搜索引擎
+         delSearchUrl: function(params) {
+            var def = $q.defer();
+            $http.post('/api/delSearchUrl/',{
+                params:params
+            })
                 .success(function(data) {
                     def.resolve(data);
                 })

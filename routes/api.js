@@ -281,6 +281,7 @@ api.post('/updateQuickUrl', function(req, res) {
         });
 });
 
+// 获取搜索引擎列表
 api.get('/getSearchUrl',function(req,res){
    
     if (!req.session.user) {
@@ -310,15 +311,14 @@ api.get('/getSearchUrl',function(req,res){
 
 })
 
+// 添加搜索引擎
 api.post('/addSearchUrl', function(req, res) {
-    console.log("========addSearchUrl username = ", req.session.user.id);
     if (!req.session.user) {
         res.send(401);
         return;
     }
 
     var params = req.body;
-    console.log(params,'===========');
   
     db.getUser(req.session.user.username)
         .then((user) => {
@@ -342,6 +342,27 @@ api.post('/addSearchUrl', function(req, res) {
             })
         });
 });
+
+api.post('/delSearchUrl', function(req, res) {
+    if (!req.session.user) {
+        res.send(401);
+        return;
+    }
+  
+   db.delSearchUrl(req.body.params).then(affectedRows=>{
+       res.json({
+        retCode: (affectedRows == 1 ? 0 : 1),
+        msg: req.session.username + " 删除快捷搜索成功！"
+       })
+       .catch((err) => {
+        console.log('resetPassword error', err);
+        res.json({
+            retCode: 2,
+            msg: req.session.username + " 删除快捷搜索失败！: " + JSON.stringify(err),
+        })
+    });
+   })
+})
 
 api.get('/autoLogin', function(req, res) {
     console.log("autoLogin username = ", req.session.username);

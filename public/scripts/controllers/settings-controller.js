@@ -227,6 +227,7 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
 
     function getSearchUrl(){
         bookmarkService.getSearchUrl().then(data=>{
+            console.log(data.res,'----------');
             $scope.searchUrl = data.res 
         })
     }
@@ -240,10 +241,33 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
 
         $scope.searchParams['title'] = $scope.title;
         $scope.searchParams['search_url'] = $scope.search_url;
+        $scope.searchParams['icon_class'] = $scope.icon_class;
+
 
         saveSearchUrl();
         $scope.title = '';
         $scope.search_url = '';
+        $scope.icon_class=''
+    }
+
+    $scope.delSearchUrl = function(item){
+        if(window.confirm('你确定删除吗?')){
+            bookmarkService.delSearchUrl(item.id).then(res=>{
+                if(res.retCode === 0 ){
+                    toastr.success('快捷搜索引擎删除成功！', "提示");
+                    getSearchUrl()
+                }else{
+                    toastr.error('快捷搜索删除失败！' + res.msg, "提示");
+                    getSearchUrl()
+                }
+            }
+            )
+            .catch((err) => {
+                toastr.error('快捷搜索删除失败！错误提示：' + JSON.stringify(err), "提示");
+                getSearchUrl()
+            });
+        }
+      
     }
 
 
@@ -334,8 +358,10 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
                     pubSubService.publish('Settings.searchUrl', {
                         searchUrl: $scope.searchUrl
                     });
+                   getSearchUrl()
                 } else {
                     toastr.error('快捷搜索引擎添加失败。错误信息：' + data.msg, "错误");
+                    getSearchUrl()
                 }
             })
             .catch((err) => {
