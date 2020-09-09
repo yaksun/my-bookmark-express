@@ -230,6 +230,7 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
             console.log(data.res,'----------');
             $scope.searchUrl = data.res 
         })
+        
     }
 
 
@@ -248,6 +249,7 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
         $scope.title = '';
         $scope.search_url = '';
         $scope.icon_class=''
+        pubSubService.publish('refreshList')
     }
 
     $scope.delSearchUrl = function(item){

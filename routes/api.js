@@ -321,12 +321,17 @@ api.post('/addSearchUrl', function(req, res) {
     var params = req.body;
   
     db.getUser(req.session.user.username)
-        .then((user) => {
-            if (user) {
+        .then(user=>{
+                if (user) {
+                    return db.resetSearchUrl()
+                } else {
+                    return Promise.resolve(0)
+                }
+        })
+        .then(() => {
+            
                 return db.addSearchUrl(req.session.userId, params)
-            } else {
-                return Promise.resolve(0)
-            }
+            
         })
         .then((affectedRows) => {
             res.json({
