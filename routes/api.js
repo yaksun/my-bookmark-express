@@ -373,13 +373,18 @@ api.post('/updateSearchUrl', function(req, res) {
     }
 
     var params = req.body.params;
+    console.log(req.body,params);
+
     db.getUser(req.session.user.username)
-        .then((user) => {
+        .then(user=>{
             if (user) {
-                return db.updateSearchUrl(id,params)
+                return db.resetSearchUrl()
             } else {
                 return Promise.resolve(0)
             }
+        })
+        .then(() => {
+                return db.updateSearchUrl(req.body.id,params)
         })
         .then((affectedRows) => {
             res.json({

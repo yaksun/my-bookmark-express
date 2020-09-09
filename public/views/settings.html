@@ -261,6 +261,7 @@
                                 <img class="ui mini spaced image" style="width:16px;height:16px;margin:0 1px" ng-src="./images/delete.png" ng-click="delSearchUrl(item)" title="删除搜索链接">
                                 <!-- <img class="ui mini spaced image" style="width:16px;height:16px;margin:0 1px" ng-src="./images/edit-bookmark.png" ng-click="editSearchUrl(item)"
                                 title="编辑搜索链接"> -->
+                                <input style="width:16px;height:16px;margin:0 1px;vertical-align: middle" ng-checked=" {{ item.default=== '0' ? false : true  }} " title="设为默认" type="radio" ng-click="setSearchUrl(item)" name="status">
                             </td>
                         </tr>
                     </tbody>

@@ -270,6 +270,30 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
       
     }
 
+    $scope.setSearchUrl= function(item){
+        if(window.confirm('你确定设置为默认吗?')){
+            var params= {}  
+            params.default = item.default === '0'  ? '1' : '0' 
+            params.icon_class = item.icon_class 
+            params.search_url = item.search_url 
+            params.title = item.title 
+            bookmarkService.updateSearchUrl(item.id,params).then(res=>{
+                if(res.retCode === 0 ){
+                    toastr.success('设置默认搜索引擎成功！', "提示");
+                    getSearchUrl()
+                }else{
+                    toastr.error('设置默认搜索引擎失败！' + res.msg, "提示");
+                    getSearchUrl()
+                }
+            }
+            )
+            .catch((err) => {
+                toastr.error('设置默认搜索引擎失败！错误提示：' + JSON.stringify(err), "提示");
+                getSearchUrl()
+            });
+        }
+    }
+
 
     $scope.editSearchUrl= function(item){
         console.log(item,'===========');

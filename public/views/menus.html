@@ -47,8 +47,8 @@
                     </div>
                 </div>
                 <div style="margin-top: 13px;">
-                    <span style="display: none" class="searchIcon" ng-repeat="item in searchUrl" >
-                        <span ><i  class="{{item.icon_class}}" title="{{item.title}}" ng-click="search(searchWord, 1)" style="cursor:default;margin-right: 8px;"></i></span>
+                    <span style="display: none" class="searchIcon"  >
+                        <span ng-repeat="item in searchUrl" ><i  class="{{item.icon_class}}" title="{{item.title}}" ng-click="search(searchWord, item.id)" style="cursor:default;margin-right: 8px;"></i></span>
                         <!-- <span><i class="bimobject link icon" title="百度搜索(输入关键字按回车键默认搜索引擎)" ng-click="search(searchWord, 4)" style="cursor:default;margin-right: 8px;"></i></span>
                         <span ><i class="google link icon" title="谷歌搜索" ng-click="search(searchWord, 1)" style="cursor:default;margin-right: 8px;"></i></span>
                         <span><i class="iconfont iconbiying" title="必应搜索" ng-click="search(searchWord, 6)" style="cursor:default;margin-right: 8px;"></i></span>

@@ -219,6 +219,7 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
 
     }
 
+
     /**
      * @func
      * @desc 点击搜索按钮搜索书签
@@ -236,38 +237,45 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
         }
 
         $scope.login = true;
+
+        let tempItem = $scope.searchUrl.find(item=>item.id === searchOption)
+        if(tempItem){
+            $window.open(tempItem.search_url + encodeURIComponent(searchWord), '_blank');
+        }
+
+
         // var searchOption = $('.js-search-option').dropdown('get value') || 0;
-        if (searchOption == 0) {
-            $state.go('search', {
-                searchWord: searchWord,
-            }, {
-                    reload: true,
-                })
-            updateMenuActive($scope.selectLoginIndex = 0);
-        } else if (searchOption == 1) {
-            $window.open('https://www.google.com.hk/#newwindow=1&safe=strict&q=' + encodeURIComponent(searchWord), '_blank');
-        } else if (searchOption == 2) {
-            $window.open('https://github.com/search?q=' + encodeURIComponent(searchWord), '_blank');
-        } else if (searchOption == 6) {
-            $window.open('https://cn.bing.com/search?q=' + encodeURIComponent(searchWord), '_blank');
-        } else if (searchOption == 7) {
-            $window.open('https://www.toutiao.com/search/?keyword=' + encodeURIComponent(searchWord), '_blank');
-        } else if (searchOption == 8) {
-            $window.open('https://search.gitee.com/?q=' + encodeURIComponent(searchWord), '_blank');
-        }
-        else if (searchOption == 3) {
-            $window.open('https://stackoverflow.com/search?q=' + encodeURIComponent(searchWord), '_blank');
-        } else if (searchOption == 4) {
-            $window.open('http://www.baidu.com/s?wd=' + encodeURIComponent(searchWord), '_blank');
-        } else if (searchOption == 5) {
-            console.log('search note, word = ', searchWord);
-            $state.go('note', {
-                searchWord: searchWord,
-            }, {
-                    reload: true,
-                })
-            updateMenuActive($scope.selectLoginIndex = dataService.LoginIndexNote);
-        }
+        // if (searchOption == 0) {
+        //     $state.go('search', {
+        //         searchWord: searchWord,
+        //     }, {
+        //             reload: true,
+        //         })
+        //     updateMenuActive($scope.selectLoginIndex = 0);
+        // } else if (searchOption == 1) {
+        //     $window.open('https://www.google.com.hk/#newwindow=1&safe=strict&q=' + encodeURIComponent(searchWord), '_blank');
+        // } else if (searchOption == 2) {
+        //     $window.open('https://github.com/search?q=' + encodeURIComponent(searchWord), '_blank');
+        // } else if (searchOption == 6) {
+        //     $window.open('https://cn.bing.com/search?q=' + encodeURIComponent(searchWord), '_blank');
+        // } else if (searchOption == 7) {
+        //     $window.open('https://www.toutiao.com/search/?keyword=' + encodeURIComponent(searchWord), '_blank');
+        // } else if (searchOption == 8) {
+        //     $window.open('https://search.gitee.com/?q=' + encodeURIComponent(searchWord), '_blank');
+        // }
+        // else if (searchOption == 3) {
+        //     $window.open('https://stackoverflow.com/search?q=' + encodeURIComponent(searchWord), '_blank');
+        // } else if (searchOption == 4) {
+        //     $window.open('http://www.baidu.com/s?wd=' + encodeURIComponent(searchWord), '_blank');
+        // } else if (searchOption == 5) {
+        //     console.log('search note, word = ', searchWord);
+        //     $state.go('note', {
+        //         searchWord: searchWord,
+        //     }, {
+        //             reload: true,
+        //         })
+        //     updateMenuActive($scope.selectLoginIndex = dataService.LoginIndexNote);
+        // }
 
         if (!searchWord) {
             return;
