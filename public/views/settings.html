@@ -230,12 +230,16 @@
                             <input type="text" placeholder="请输入链接显示的标题" ng-model="title" >
                         </div>
                         <div class="six wide field">
-                            <label style="min-width:55px;width: 100px;">图标样式：</label>
+                            <label style="min-width:55px;width: 120px;">图标样式：</label>
                             <input type="text" placeholder="请输入链接显示的图标样式" ng-model="icon_class" >
                         </div>
                         <div class="six wide field">
                             <label style="min-width:66px;">搜索地址：</label>
                             <input type="text" placeholder="请输入要使用的搜索方式" ng-model="search_url">
+                        </div>
+                        <div class="six wide field">
+                            <label style="min-width:55px;">快捷键：</label>
+                            <input type="text" placeholder="请输入快捷键" ng-model="quick_key" >
                         </div>
                         <div class="two wide field">
                             <div class="ui green button" ng-click="addSearchUrl()">确定</div>
@@ -248,8 +252,9 @@
                         <tr>
                             <th style="width:100px;">标题</th>
                             <th style="width:150px;">图标样式</th>
-                            <th>快捷搜索地址</th>
-                            <th style="width:100px;">操作</th>
+                            <th>搜索地址</th>
+                            <th style="width:100px;">快捷键</th>
+                            <th style="width:150px;">操作</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -257,6 +262,7 @@
                             <td>{{item.title}}</td>
                             <td>{{item.icon_class}}</td>
                             <td> {{item.search_url}} </td>
+                            <td>{{ item.quick_key }}</td>
                             <td>
                                 <img class="ui mini spaced image" style="width:16px;height:16px;margin:0 1px" ng-src="./images/delete.png" ng-click="delSearchUrl(item)" title="删除搜索链接">
                                 <!-- <img class="ui mini spaced image" style="width:16px;height:16px;margin:0 1px" ng-src="./images/edit-bookmark.png" ng-click="editSearchUrl(item)"

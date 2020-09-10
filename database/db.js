@@ -361,8 +361,7 @@ db.getSearchUrl = function(userId){
 
 // 添加搜索链接
 db.addSearchUrl = function(userId, params) {
-    var sql = "INSERT INTO `setting_search` (`user_id`, `title`, `search_url`,`icon_class`,`default`) VALUES ('" + userId + "', " + client.escape(params.title) + ", "+ client.escape(params.search_url) + ", " + client.escape(params.icon_class) +", "+ 1 + ")";
-
+    var sql = "INSERT INTO `setting_search` (`user_id`, `title`, `search_url`,`icon_class`,`quick_key`,`default`) VALUES ('" + userId + "', " + client.escape(params.title) + ", "+ client.escape(params.search_url) + ", " + client.escape(params.icon_class) +", "+ client.escape(params.quick_key) +", "+ 1 + ")";
     console.log('addSearchUrl', sql);
     return new Promise(function(resolve, reject) {
         client.query(sql, (err, result) => {
@@ -407,7 +406,7 @@ db.resetSearchUrl = function() {
 
 
 db.updateSearchUrl = function(id, params) {
-        var sql = "UPDATE `setting_search` SET `title`='" + params.title + "', `default`=" + params.default + ", `search_url`='" + params.search_url + "', `icon_class`='" + params.icon_class + "' WHERE (`id`='" + id + "' )";
+        var sql = "UPDATE `setting_search` SET `title`='" + params.title + "', `default`=" + params.default + ", `search_url`='" + params.search_url + "', `icon_class`='" + params.icon_class+ "', `quick_key`='" + params.quick_key + "' WHERE (`id`='" + id + "' )";
         console.log('updateSearchUrl', sql);
         return new Promise(function(resolve, reject) {
             client.query(sql, (err, result) => {

@@ -16,139 +16,25 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
 
 
     getSearchUrl() 
-    // google搜索
-     hotkeys.add({
-        combo: 'ctrl+g',
-        description: 'This one goes to 11',
-        allowIn: ['INPUT', 'SELECT', 'TEXTAREA'],
-        callback: function(event, hotkey) {
 
-            event.preventDefault();
-
-            let temp = $('#sInput').val()
-
-            // let temp = event.target.value
-            $scope.search(temp, 1)
-
-        }
-    })
-
-
-        // 百度搜索
-        // you can chain these methods for ease of use:
-         hotkeys.add ({
-            combo: 'ctrl+d',
-            description: 'This one goes to 12',
-            allowIn: ['INPUT', 'SELECT', 'TEXTAREA'],
-            callback: function(event, hotkey) {
-
-                event.preventDefault();
-                let temp = $('#sInput').val()
-                $scope.search(temp, 4)
-
-            }
-        });
-
-     // 书签搜索
-    hotkeys.add ({
-        combo: 'ctrl+s',
-        description: 'This one goes to 12',
-        allowIn: ['INPUT', 'SELECT', 'TEXTAREA'],
-        callback: function(event, hotkey) {
-
-            event.preventDefault();
-            let temp = $('#sInput').val()
-            $scope.search(temp, 0)
-
-        }
-    });
-
-    // 备忘录搜索
-    hotkeys.add ({
-        combo: 'ctrl+m',
-        description: 'This one goes to 12',
-        allowIn: ['INPUT', 'SELECT', 'TEXTAREA'],
-        callback: function(event, hotkey) {
-
-            event.preventDefault();
-            let temp = $('#sInput').val()
-            $scope.search(temp, 5)
-
-        }
-    });
-
-    // github搜索
-    hotkeys.add ({
-        combo: 'ctrl+h',
-        description: 'This one goes to 12',
-        allowIn: ['INPUT', 'SELECT', 'TEXTAREA'],
-        callback: function(event, hotkey) {
-
-            event.preventDefault();
-            let temp = $('#sInput').val()
-            $scope.search(temp, 2)
-
-        }
-    });
-
-    // 栈溢出搜索
-    hotkeys.add ({
-        combo: 'ctrl+z',
-        description: 'This one goes to 12',
-        allowIn: ['INPUT', 'SELECT', 'TEXTAREA'],
-        callback: function(event, hotkey) {
-
-            event.preventDefault();
-            let temp = $('#sInput').val()
-            $scope.search(temp, 3)
-
-        }
-    });
-
-
-    // 必应搜索
-    hotkeys.add ({
-        combo: 'ctrl+b',
-        description: 'This one goes to 12',
-        allowIn: ['INPUT', 'SELECT', 'TEXTAREA'],
-        callback: function(event, hotkey) {
-
-            event.preventDefault();
-            let temp = $('#sInput').val()
-            $scope.search(temp, 6)
-
-        }
-    });
-
-
-    // 头条搜索
-    hotkeys.add ({
-        combo: 'ctrl+j',
-        description: 'This one goes to 12',
-        allowIn: ['INPUT', 'SELECT', 'TEXTAREA'],
-        callback: function(event, hotkey) {
-
-            event.preventDefault();
-            let temp = $('#sInput').val()
-            $scope.search(temp, 7)
-
-        }
-    });
-
-
-    // gitee代码搜索
-    hotkeys.add ({
-        combo: 'ctrl+i',
-        description: 'This one goes to 12',
-        allowIn: ['INPUT', 'SELECT', 'TEXTAREA'],
-        callback: function(event, hotkey) {
-
-            event.preventDefault();
-            let temp = $('#sInput').val()
-            $scope.search(temp, 8)
-
-        }
-    });
+    $scope.initHotKeys=function(list){
+        list.forEach((item,index)=>{
+            hotkeys.add({
+                combo: item.quick_key,
+                description: 'This one goes to '+index,
+                allowIn: ['INPUT', 'SELECT', 'TEXTAREA'],
+                callback: function(event, hotkey) {
+                    event.preventDefault();
+                    let temp = $('#sInput').val()
+        
+                    // let temp = event.target.value
+                    $scope.search(temp, item.id)
+        
+                }
+            })
+        
+        })
+    }
 
     pubSubService.subscribe('refreshList',$scope,function(){
         console.log(99999);
@@ -188,6 +74,7 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
             var temp = data.res.find(item=> item.default === '1') 
             if(temp){
                 $scope.defaultId = temp.id 
+                $scope.initHotKeys(data.res)
             }
          
         })

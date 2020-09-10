@@ -243,12 +243,14 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
         $scope.searchParams['title'] = $scope.title;
         $scope.searchParams['search_url'] = $scope.search_url;
         $scope.searchParams['icon_class'] = $scope.icon_class;
+        $scope.searchParams['quick_key'] = $scope.quick_key;
 
 
         saveSearchUrl();
         $scope.title = '';
         $scope.search_url = '';
-        $scope.icon_class=''
+        $scope.icon_class='';
+        $scope.quick_key=''
         pubSubService.publish('refreshList')
     }
 
@@ -279,6 +281,7 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
             params.icon_class = item.icon_class 
             params.search_url = item.search_url 
             params.title = item.title 
+            params.quick_key = item.quick_key
             bookmarkService.updateSearchUrl(item.id,params).then(res=>{
                 if(res.retCode === 0 ){
                     toastr.success('设置默认搜索引擎成功！', "提示");
