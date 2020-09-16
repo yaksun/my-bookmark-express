@@ -113,6 +113,13 @@ app.controller('bookmarksCtr', ['$scope', '$state', '$stateParams', '$filter', '
         });
     }
 
+    $scope.editSearchUrl = function(bookmarkId) {
+        pubSubService.publish('bookmarksCtr.editSearchUrl', {
+            'searchUrlId': searchUrlId
+        });
+    }
+
+
     $scope.detailBookmark = function(b) {
         var bookmark = $.extend(true, {}, b); // 利用jQuery执行深度拷贝
         bookmark.own = true;

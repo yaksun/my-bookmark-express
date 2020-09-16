@@ -229,6 +229,7 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
         bookmarkService.getSearchUrl().then(data=>{
             console.log(data.res,'----------');
             $scope.searchUrl = data.res 
+
         })
         
     }
@@ -260,6 +261,7 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
                 if(res.retCode === 0 ){
                     toastr.success('快捷搜索引擎删除成功！', "提示");
                     getSearchUrl()
+                    window.location.reload();
                 }else{
                     toastr.error('快捷搜索删除失败！' + res.msg, "提示");
                     getSearchUrl()
@@ -286,6 +288,8 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
                 if(res.retCode === 0 ){
                     toastr.success('设置默认搜索引擎成功！', "提示");
                     getSearchUrl()
+                    window.location.reload();
+
                 }else{
                     toastr.error('设置默认搜索引擎失败！' + res.msg, "提示");
                     getSearchUrl()
@@ -296,12 +300,15 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
                 toastr.error('设置默认搜索引擎失败！错误提示：' + JSON.stringify(err), "提示");
                 getSearchUrl()
             });
+
         }
     }
 
-
-    $scope.editSearchUrl= function(item){
-        console.log(item,'===========');
+    
+    $scope.editSearchUrl = function (searchUrlId) {
+        pubSubService.publish('bookmarksCtr.editSearchUrl', {
+            'searchUrlId': searchUrlId
+        });
     }
 
     $scope.delUrl = function(key) {
@@ -391,6 +398,7 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
                         searchUrl: $scope.searchUrl
                     });
                    getSearchUrl()
+                   window.location.reload();
                 } else {
                     toastr.error('快捷搜索引擎添加失败。错误信息：' + data.msg, "错误");
                     getSearchUrl()
