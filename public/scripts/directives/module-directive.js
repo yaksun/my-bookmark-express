@@ -6,6 +6,14 @@ app.directive('bookmarkinfo', function() {
     }
 });
 
+app.directive('sedit', function() {
+    return {
+        restrict: 'EAC',
+        templateUrl: '/views/sedit.html',
+        replace: true
+    }
+});
+
 app.directive('edit', function() {
     return {
         restrict: 'EAC',

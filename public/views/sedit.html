@@ -1,0 +1,42 @@
+<div class="ui long modal js-add-searchUrl" ng-controller="seditCtr">
+    <!-- <i class="close icon"></i> -->
+    <div class="header">
+        {{ add ? '添加搜索设置' : '编辑搜索设置'}}
+    </div>
+    <div class="content">
+        <div class="ui form">
+            <div class="required field">
+                <div class="fields">
+                    <div class="required eight wide field" >
+                        <label>标题</label>
+                        <input type="text" placeholder="输入标题" ng-model="title">
+                    </div>
+                    <div class="required eight wide field" >
+                        <label>图标样式</label>
+                        <input type="text" placeholder="输入图标样式" ng-model="icon_class">
+                    </div>
+                </div>
+                <div class="fields">
+                    <div class="required eight wide field" >
+                        <label>搜索地址</label>
+                        <input type="text" placeholder="输入搜索地址" ng-model="search_url">
+                    </div>
+                    <div class="required eight wide field" >
+                        <label>快捷键</label>
+                        <input type="text" placeholder="输入快捷键" ng-model="quick_key">
+                    </div>
+                </div>   
+            </div>
+            <div class="field">
+                <div class="ui checkbox checked js-public">
+                    <input type="checkbox" name="example" checked="">
+                    <label>设置为默认</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui cancel button" ng-click="cancel()" style="cursor:default;">取消</div>
+        <div class="ui green button" ng-click="ok()" style="cursor:default;">确定</div>
+    </div>
+</div>

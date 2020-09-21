@@ -305,9 +305,10 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
     }
 
     
-    $scope.editSearchUrl = function (searchUrlId) {
+    $scope.editSearchUrl = function (item) {
+        console.log('-------------');
         pubSubService.publish('bookmarksCtr.editSearchUrl', {
-            'searchUrlId': searchUrlId
+            'param': item
         });
     }
 

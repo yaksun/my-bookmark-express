@@ -113,9 +113,9 @@ app.controller('bookmarksCtr', ['$scope', '$state', '$stateParams', '$filter', '
         });
     }
 
-    $scope.editSearchUrl = function(bookmarkId) {
+    $scope.editSearchUrl = function(item) {
         pubSubService.publish('bookmarksCtr.editSearchUrl', {
-            'searchUrlId': searchUrlId
+            'param': item 
         });
     }
 
@@ -146,7 +146,6 @@ app.controller('bookmarksCtr', ['$scope', '$state', '$stateParams', '$filter', '
     }
 
     $scope.addBookmarkbyFile = function() {
-        console.log("addBookmarkbyFile",111111111);
         $state.go('settings', {
             formIndex: 2,
         });
