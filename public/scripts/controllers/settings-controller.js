@@ -187,6 +187,7 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
 
 
     $scope.addQuickUrl = function() {
+        debugger;
         if ($scope.url == '' || $scope.key == '') {
             toastr.warning('快捷键或者网站地址为空！', "警告");
         }

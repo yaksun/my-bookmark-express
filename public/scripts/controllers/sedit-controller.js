@@ -7,7 +7,7 @@ app.controller('seditCtr', ['$scope', '$state', '$timeout', '$document', 'ngDial
 
     $scope.$watch('search_url', function(newUrl, oldUrl, scope) {
         $timeout(function() {
-            $scope.urlError = $scope.search_url == '' && $('.ui.modal.js-add-searchUrl').modal('is active');
+            $scope.searchUrlError = $scope.search_url == '' && $('.ui.modal.js-add-searchUrl').modal('is active');
         });
     
     });
@@ -32,28 +32,35 @@ app.controller('seditCtr', ['$scope', '$state', '$timeout', '$document', 'ngDial
         });
     });
 
+    $scope.$watch('default', function(newValue, oldValue, scope) {
+        $timeout(function() {
+            $scope.defaultError = $scope.default == '' && $('.ui.modal.js-add-searchUrl').modal('is active');
+        });
+    });
+
     $scope.restoreTitle = function() {
         $scope.title = $scope.originTitle;
     }
 
-    $scope.cancel = function() {
+    $scope.handleCancel = function() {
         $('.ui.modal.js-add-searchUrl').modal('hide');
 
         init();
     }
-    $scope.ok = function() {
-      
-        // console.log('Hello ok clicked', $scope.url, $scope.title, $scope.description, $scope.public, selectedTags, $scope.tags);
-        $scope.urlError = $scope.search_url == '';
+    $scope.handleOk = function() {
+     
+        $scope.searchUrlError = $scope.search_url == '';
         $scope.titleError = $scope.title == '';
         $scope.quickKeyError = $scope.quick_key == '';
         $scope.iconClassError = $scope.icon_class == '';
+        $scope.defaultError = $scope.default == '';
         var params = {
             id: $scope.id,
             url: $scope.search_url,
             title: $scope.title,
             quick_key: $scope.quick_key,
             icon_class: $scope.icon_class,
+            default: $scope.default,
             public: $('.ui.checkbox.js-public').checkbox('is checked') ? '1' : '0',
         }
      
@@ -63,12 +70,11 @@ app.controller('seditCtr', ['$scope', '$state', '$timeout', '$document', 'ngDial
         }
         console.log("add bookmark", params);
         if ($scope.add) {
-            bookmarkService.addBookmark(params)
+            bookmarkService.addSearchUrl(params)
                 .then((data) => {
                     $('.ui.modal.js-add-searchUrl').modal('hide');
-                    pubSubService.publish('EditCtr.inserBookmarsSuccess', data);
                     if (data.title) {
-                        toastr.success('[ ' + data.title + ' ] 添加成功，将自动重新更新书签！</br>' + (data.update ? '系统检测到该书签之前添加过，只更新链接，描述，标题，分类。创建日期与最后点击日期不更新！' : ''), "提示");
+                        toastr.success('[ ' + data.title + ' ] 添加成功，将自动重新更新搜索链接!' , "提示");
                     } else {
                         toastr.error('[ ' + params.title + ' ] 添加失败', "提示");
                     }
@@ -78,11 +84,10 @@ app.controller('seditCtr', ['$scope', '$state', '$timeout', '$document', 'ngDial
                     toastr.error('[ ' + params.title + ' ] 添加失败' + JSON.stringify(err), "提示");
                 });
         } else {
-            bookmarkService.updateSearchUrl(params)
+            bookmarkService.updateSearchUrl(params.id,params)
                 .then((data) => {
                     $('.ui.modal.js-add-searchUrl').modal('hide');
-                    pubSubService.publish('SeditCtr.inserBookmarsSuccess', data);
-                    toastr.success('[ ' + params.title + ' ] 更新成功，将自动重新更新书签！', "提示");
+                    toastr.success('[ ' + params.title + ' ] 更新成功，将自动重新更新搜索链接！', "提示");
                 })
                 .catch((err) => {
                     console.log('updateBookmark err', err);
@@ -102,18 +107,17 @@ app.controller('seditCtr', ['$scope', '$state', '$timeout', '$document', 'ngDial
             $('.ui.modal.js-add-searchUrl').modal("refresh");
         }, 500);
         $scope.add = false;
-        $scope.loadTags = true;
         cancelDefault = false;
                 var bookmark = params.param;
-                $scope.autoGettitle = false;
+             
                 $scope.id = (bookmark && bookmark.id) || '';
                 $scope.search_url = (bookmark && bookmark.search_url) || '';
                 $scope.title = (bookmark && bookmark.title) || '';
                 $scope.icon_class = (bookmark && bookmark.icon_class) || '';
                 $scope.quick_key = (bookmark && bookmark.quick_key) || '';
-               
-                $scope.public = (bookmark && bookmark.id) || '1';
-                $('.ui.checkbox.js-public').checkbox((bookmark && bookmark.public && bookmark.public == '1') ? 'set checked' : 'set unchecked')
+                $scope.default = (bookmark && bookmark.default) || '';
+    
+                $('.ui.checkbox.js-public').checkbox((bookmark && bookmark.default && bookmark.default == '1') ? 'set checked' : 'set unchecked')
 
     });
 
@@ -155,10 +159,10 @@ app.controller('seditCtr', ['$scope', '$state', '$timeout', '$document', 'ngDial
         $scope.icon_class = '';
         $scope.quick_key = '';
 
-        $scope.urlError = false;
+        $scope.searchUrlError = false;
         $scope.titleError = false;
-        $scope.titleError = false;
-        $scope.titleError = false;
+        $scope.quickKeyError = false;
+        $scope.iconClassError = false;
 
         $scope.public = '1';
     }
