@@ -16,7 +16,7 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
     $scope.tagCnt = 0;
     $scope.bookmarkCnt = 0;
     $scope.loadShowStyle = false;
-    $scope.form[($stateParams && $stateParams.formIndex) || 0] = true;
+    $scope.form[($stateParams && $stateParams.formIndex) || 6] = true;
     $scope.key = '';
     $scope.url = '';
 
@@ -302,15 +302,20 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
                 getSearchUrl()
             });
 
+        }else{
+            window.location.reload();
         }
     }
 
     
     $scope.editSearchUrl = function (item) {
-        console.log('-------------');
         pubSubService.publish('bookmarksCtr.editSearchUrl', {
             'param': item
         });
+    }
+
+    $scope.addSearchUrl = function () {
+        pubSubService.publish('bookmarksCtr.addSearchUrl');
     }
 
     $scope.delUrl = function(key) {

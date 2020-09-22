@@ -119,6 +119,10 @@ app.controller('bookmarksCtr', ['$scope', '$state', '$stateParams', '$filter', '
         });
     }
 
+    $scope.addSearchUrl = function() {
+        pubSubService.publish('bookmarksCtr.addSearchUrl');
+    }
+
 
     $scope.detailBookmark = function(b) {
         var bookmark = $.extend(true, {}, b); // 利用jQuery执行深度拷贝

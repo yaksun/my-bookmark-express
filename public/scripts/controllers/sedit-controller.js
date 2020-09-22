@@ -53,15 +53,14 @@ app.controller('seditCtr', ['$scope', '$state', '$timeout', '$document', 'ngDial
         $scope.titleError = $scope.title == '';
         $scope.quickKeyError = $scope.quick_key == '';
         $scope.iconClassError = $scope.icon_class == '';
-        $scope.defaultError = $scope.default == '';
+        $scope.defaultError = $scope.default == '0';
         var params = {
             id: $scope.id,
-            url: $scope.search_url,
+            search_url: $scope.search_url,
             title: $scope.title,
             quick_key: $scope.quick_key,
             icon_class: $scope.icon_class,
-            default: $scope.default,
-            public: $('.ui.checkbox.js-public').checkbox('is checked') ? '1' : '0',
+            default: $scope.default
         }
      
         if ($scope.titleError) {
@@ -78,6 +77,7 @@ app.controller('seditCtr', ['$scope', '$state', '$timeout', '$document', 'ngDial
                     } else {
                         toastr.error('[ ' + params.title + ' ] 添加失败', "提示");
                     }
+                    window.location.reload()
                 })
                 .catch((err) => {
                     console.log('addBookmark err', err);
@@ -88,6 +88,7 @@ app.controller('seditCtr', ['$scope', '$state', '$timeout', '$document', 'ngDial
                 .then((data) => {
                     $('.ui.modal.js-add-searchUrl').modal('hide');
                     toastr.success('[ ' + params.title + ' ] 更新成功，将自动重新更新搜索链接！', "提示");
+                    window.location.reload()
                 })
                 .catch((err) => {
                     console.log('updateBookmark err', err);
@@ -95,6 +96,28 @@ app.controller('seditCtr', ['$scope', '$state', '$timeout', '$document', 'ngDial
                 });
         }
     }
+
+
+    pubSubService.subscribe('bookmarksCtr.addSearchUrl', $scope, function(event) {
+        console.log('subscribe bookmarksCtr.addSearchUrl');
+        $('.ui.modal.js-add-searchUrl').modal({
+            closable: false,
+        }).modal('setting', 'transition', dataService.animation()).modal('show');
+        setTimeout(function() {
+            $('.ui.modal.js-add-searchUrl').modal("refresh");
+        }, 500);
+        $scope.add = true;
+        cancelDefault = false;
+              
+                $scope.search_url = '';
+                $scope.title = '';
+                $scope.icon_class =  '';
+                $scope.quick_key =  '';
+                $scope.default = '0';
+    
+                $('.ui.checkbox.js-public').checkbox('set unchecked')
+
+    });
 
 
 
@@ -158,12 +181,13 @@ app.controller('seditCtr', ['$scope', '$state', '$timeout', '$document', 'ngDial
         $scope.title = '';
         $scope.icon_class = '';
         $scope.quick_key = '';
+        $scope.default = '0';
 
         $scope.searchUrlError = false;
         $scope.titleError = false;
         $scope.quickKeyError = false;
         $scope.iconClassError = false;
+        $scope.defaultError = false;
 
-        $scope.public = '1';
     }
 }]);
