@@ -36,8 +36,10 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
         })
     }
 
+
+   
     pubSubService.subscribe('refreshList',$scope,function(){
-        console.log(99999);
+       
     })
 
     // 防止在登陆的情况下，在浏览器里面直接输入url，这时候要更新菜单选项
@@ -69,7 +71,6 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
     
     function getSearchUrl(){
         bookmarkService.getSearchUrl().then(data=>{
-            console.log(data.res,'----------');
             $scope.searchUrl = data.res 
             var temp = data.res.find(item=> item.default === '1') 
             if(temp){
@@ -81,8 +82,6 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
     }
 
     $scope.toggleReady = function(ready) {
-
-
         if(ready) {
             $(".searchIcon").show();
         } else {
@@ -136,7 +135,8 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
 
         let tempItem = $scope.searchUrl.find(item=>item.id === searchOption)
         if(tempItem){
-            $window.open(tempItem.search_url + encodeURIComponent(searchWord), '_blank');
+            let tempUrl = tempItem.search_url.replace('{keyword}',encodeURIComponent(searchWord))
+            $window.open(tempUrl, '_blank');
         }
 
 
