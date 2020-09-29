@@ -72,10 +72,10 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
     function getSearchUrl(){
         bookmarkService.getSearchUrl().then(data=>{
             $scope.searchUrl = data.res 
+            $scope.initHotKeys(data.res)
             var temp = data.res.find(item=> item.default === '1') 
             if(temp){
                 $scope.defaultId = temp.id 
-                $scope.initHotKeys(data.res)
             }
          
         })
