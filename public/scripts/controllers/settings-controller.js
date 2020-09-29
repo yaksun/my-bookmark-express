@@ -110,7 +110,28 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
         if(index == 6){
            getSearchUrl()
         }
+
     }
+
+
+    // window.onload=function(){
+    //     debugger;
+    //     if(location.href.indexOf("#reloaded")==-1){
+    //         location.href=location.href+"#reloaded";
+    //         location.reload();
+    //     }
+    // }
+
+    
+    $scope.fresh=function(){  
+        if(location.href.indexOf("#reloaded")==-1){
+                    location.href=location.href+"#reloaded";
+                    location.reload();
+             }
+    }  
+    setTimeout(function(){
+        $scope.fresh()
+    },50);
 
     $scope.changeForm($scope.form.indexOf(true)); // 马上调用一次
 
@@ -230,7 +251,6 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
         bookmarkService.getSearchUrl().then(data=>{
             console.log(data.res,'----------');
             $scope.searchUrl = data.res 
-
         })
         
     }
