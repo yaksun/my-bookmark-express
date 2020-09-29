@@ -131,7 +131,7 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
     }  
     setTimeout(function(){
         $scope.fresh()
-    },50);
+    },10);
 
     $scope.changeForm($scope.form.indexOf(true)); // 马上调用一次
 
