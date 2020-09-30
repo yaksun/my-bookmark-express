@@ -17,6 +17,31 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
 
     getSearchUrl() 
 
+    hotkeys.add({
+        combo: 'ctrl+s',
+        description: 'This one goes to ',
+        allowIn: ['INPUT', 'SELECT', 'TEXTAREA'],
+        callback: function(event, hotkey) {
+            event.preventDefault();
+            let temp = $('#sInput').val()
+            $scope.search(temp, 'bq')
+
+        }
+    })
+
+    
+    hotkeys.add({
+        combo: 'ctrl+q',
+        description: 'This one goes to ',
+        allowIn: ['INPUT', 'SELECT', 'TEXTAREA'],
+        callback: function(event, hotkey) {
+            event.preventDefault();
+            let temp = $('#sInput').val()
+            $scope.search(temp, 'nq')
+
+        }
+    })
+
     $scope.initHotKeys=function(list){
         list.forEach((item,index)=>{
             hotkeys.add({
@@ -72,6 +97,7 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
     function getSearchUrl(){
         bookmarkService.getSearchUrl().then(data=>{
             $scope.searchUrl = data.res 
+            window.sessionStorage.setItem('searchUrl',JSON.stringify(data.res))
             $scope.initHotKeys(data.res)
             var temp = data.res.find(item=> item.default === '1') 
             if(temp){
@@ -139,16 +165,7 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
             $window.open(tempUrl, '_blank');
         }
 
-
-        // var searchOption = $('.js-search-option').dropdown('get value') || 0;
-        // if (searchOption == 0) {
-        //     $state.go('search', {
-        //         searchWord: searchWord,
-        //     }, {
-        //             reload: true,
-        //         })
-        //     updateMenuActive($scope.selectLoginIndex = 0);
-        // } else if (searchOption == 1) {
+        // else if (searchOption == 1) {
         //     $window.open('https://www.google.com.hk/#newwindow=1&safe=strict&q=' + encodeURIComponent(searchWord), '_blank');
         // } else if (searchOption == 2) {
         //     $window.open('https://github.com/search?q=' + encodeURIComponent(searchWord), '_blank');
@@ -163,15 +180,25 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
         //     $window.open('https://stackoverflow.com/search?q=' + encodeURIComponent(searchWord), '_blank');
         // } else if (searchOption == 4) {
         //     $window.open('http://www.baidu.com/s?wd=' + encodeURIComponent(searchWord), '_blank');
-        // } else if (searchOption == 5) {
-        //     console.log('search note, word = ', searchWord);
-        //     $state.go('note', {
-        //         searchWord: searchWord,
-        //     }, {
-        //             reload: true,
-        //         })
-        //     updateMenuActive($scope.selectLoginIndex = dataService.LoginIndexNote);
         // }
+
+        // var searchOption = $('.js-search-option').dropdown('get value') || 0;
+        if (searchOption == 'bq') {
+            $state.go('search', {
+                searchWord: searchWord,
+            }, {
+                    reload: true,
+                })
+            updateMenuActive($scope.selectLoginIndex = 0);
+        } else if (searchOption == 'nq') {
+            console.log('search note, word = ', searchWord);
+            $state.go('note', {
+                searchWord: searchWord,
+            }, {
+                    reload: true,
+                })
+            updateMenuActive($scope.selectLoginIndex = dataService.LoginIndexNote);
+        }
 
         if (!searchWord) {
             return;

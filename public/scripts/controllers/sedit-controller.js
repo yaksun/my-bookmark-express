@@ -48,7 +48,7 @@ app.controller('seditCtr', ['$scope', '$state', '$timeout', '$document', 'ngDial
         init();
     }
     $scope.handleOk = function() {
-     
+        
         $scope.searchUrlError = $scope.search_url == '';
         $scope.titleError = $scope.title == '';
         $scope.quickKeyError = $scope.quick_key == '';
@@ -67,7 +67,19 @@ app.controller('seditCtr', ['$scope', '$state', '$timeout', '$document', 'ngDial
             toastr.error('书签标题不能为空！', "错误");
             return;
         }
+  
+            if(params.quick_key){
+              let data = JSON.parse( window.sessionStorage.getItem('searchUrl') || '[]')
+
+              let temp =  data.find(item=>  item.quick_key == params.quick_key )
+              if(temp!=undefined){
+                alert('该快捷键已被占用,请重新提交一个快捷键!');
+                return 
+              }
+            }
+       
         console.log("add bookmark", params);
+
         if ($scope.add) {
             bookmarkService.addSearchUrl(params)
                 .then((data) => {
