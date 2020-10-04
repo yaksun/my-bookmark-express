@@ -5,6 +5,7 @@ var db = require('../database/db.js');
 var parseHtml = require('../common/parse_html.js');
 var download = require('download');
 var multer = require('multer');
+
 // var webshot = require('webshot');
 var fs = require('fs');
 var request = require('request');
@@ -36,6 +37,9 @@ var upload = multer({
         cb(null, file.mimetype == "text/html");
     },
 })
+
+
+
 
 api.post('/logout', function(req, res) {
     var params = req.body.params;

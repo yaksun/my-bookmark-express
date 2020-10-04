@@ -160,6 +160,17 @@ app.controller('tagsCtr', ['$scope', '$filter', '$state', '$window', '$statePara
             });
     };
 
+        
+    $scope.fresh=function(){  
+        if(location.href.indexOf("#reloaded")==-1){
+                    location.href=location.href+"#reloaded";
+                    location.reload();
+             }
+    }  
+    setTimeout(function(){
+        $scope.fresh()
+    },10);
+
     $scope.changeCurrentPage = function (currentPage) {
         currentPage = parseInt(currentPage) || 0;
         console.log(currentPage);

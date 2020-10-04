@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
 const secret = 'keyboard cat';
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
 var api = require('./routes/api');
 var app = express();
@@ -23,6 +24,9 @@ folders.forEach((folder) => {
     }
   });
 })
+
+
+// app.use('/api',createProxyMiddleware({ target: 'http://192.168.1.211:9527',changeOrigin: true}));
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -47,6 +51,7 @@ app.use(session({
 }))
 
 app.use(express.static(path.join(__dirname, 'public')));
+
 app.use('/api', api);
 
 // catch 404 and forward to error handler
@@ -85,5 +90,8 @@ app.use(function (err, req, res, next) {
 // api.getSnapByTimer();
 // api.getFaviconByTimer();
 api.getHotBookmarksByTimer();
+
+
+// app.use('/api',createProxyMiddleware({ target: 'http://192.168.1.211:9527', changeOrigin: true }));
 
 module.exports = app;
