@@ -470,6 +470,7 @@ api.post('/updateBookmark', function(req, res) {
     }
 
     var bookmark = req.body.params;
+    console.log(req.session.user,9999999999);
     var userId = req.session.user.id;
     var tags = bookmark.tags;
     var ret = {};
@@ -958,19 +959,24 @@ api.post('/addBookmark', function(req, res) {
         return;
     }
     var bookmark = req.body;
-
-    let tags=bookmark.tagId.toString()
+   
+    let tags=[bookmark.tagId.toString()]
 
     var userId = req.session.userId;
+
+
     // var tags = [bookmark.tags[bookmark.tags.length - 1]]; // 只允许添加一个分类
     var bookmarkId = -1;
     var ret = {};
     var update = false;
+    console.log(tags,'---------------------');
     db.getBookmarkbyUrl(userId, bookmark.url)
         .then((bookmarkId) => {
+    
             // 如果这个url的书签存在了，那么直接返回书签，否则返回插入的书签
             if (bookmarkId) {
                 bookmark.id = bookmarkId;
+             bookmark.userId = userId
                 db.updateBookmark(bookmark); // 如果存在，更新一下。
                 update = true;
                 return Promise.resolve(bookmarkId);
@@ -979,6 +985,7 @@ api.post('/addBookmark', function(req, res) {
             }
         })
         .then((bookmark_id) => {
+
             db.delBookmarkTags(bookmark_id); // 不管3721，先删掉旧的分类
             bookmarkId = bookmark_id;
             return bookmark_id;
