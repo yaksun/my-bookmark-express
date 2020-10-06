@@ -68,19 +68,20 @@ app.controller('seditCtr', ['$scope', '$state', '$timeout', '$document', 'ngDial
             return;
         }
   
-            if(params.quick_key){
-              let data = JSON.parse( window.sessionStorage.getItem('searchUrl') || '[]')
-
-              let temp =  data.find(item=>  item.quick_key == params.quick_key )
-              if(temp!=undefined){
-                alert('该快捷键已被占用,请重新提交一个快捷键!');
-                return 
-              }
-            }
+          
        
         console.log("add bookmark", params);
 
         if ($scope.add) {
+            if(params.quick_key){
+                let data = JSON.parse( window.sessionStorage.getItem('searchUrl') || '[]')
+  
+                let temp =  data.find(item=>  item.quick_key == params.quick_key )
+                if(temp!=undefined){
+                  alert('该快捷键已被占用,请重新提交一个快捷键!');
+                  return 
+                }
+              }
             bookmarkService.addSearchUrl(params)
                 .then((data) => {
                     $('.ui.modal.js-add-searchUrl').modal('hide');

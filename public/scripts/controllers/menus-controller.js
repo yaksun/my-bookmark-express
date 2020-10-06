@@ -161,8 +161,9 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
 
         let tempItem = $scope.searchUrl.find(item=>item.id === searchOption)
         if(tempItem){
-            let tempUrl = tempItem.search_url.replace('{keyword}',encodeURIComponent(searchWord))
-            $window.open(tempUrl, '_blank');
+            let reg = /\{keyword\}/g
+            let tempUrl = tempItem.search_url.replace(reg,encodeURIComponent(searchWord))
+             $window.open(tempUrl, '_blank');
         }
 
         // else if (searchOption == 1) {
