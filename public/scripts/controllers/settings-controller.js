@@ -31,6 +31,9 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
     $scope.updateLogs = [];
     $scope.logsUrl = 'https://github.com/luchenqun/my-bookmark/commits/master';
     $scope.loadingLogs = false;
+    $scope.loadingUrls = false;
+
+    $scope.bookmarks=[]
 
     $scope.getUpdateLog = function(url) {
         if ($scope.updateLogs.length > 0 && url == 'https://github.com/luchenqun/my-bookmark/commits/master') {
@@ -109,7 +112,13 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
 
         if(index == 6){
            getSearchUrl()
+           getUrlList()
         }
+
+        if(index == 7 ){
+            // getUrlList()
+        }
+
 
     }
 
@@ -246,7 +255,7 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
         $scope.key = '';
     }
 
-
+    // 获取搜索链接
     function getSearchUrl(){
         bookmarkService.getSearchUrl().then(data=>{
             console.log(data.res,'----------');
@@ -254,6 +263,77 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
         })
         
     }
+
+    $scope.checkUrl = function (url) {
+        const promise = new Promise(function (resolve, reject) {
+          if (!url) reject('无效路径');
+          $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: "jsonp", //跨域采用jsonp方式
+            complete: (response)=> {
+              if(response.status==200)
+                resolve(true)
+              else
+                resolve(false)
+            }
+          });
+        });
+        return promise;
+      }
+      
+
+    function getUrlList(){
+        let params={
+            currentPage:2,
+            perPageItems:100,
+            tagId:-1
+        }
+        
+        bookmarkService.getBookmarksByTag(params).then(data=>{
+            // $scope.loadingUrls = true 
+            data.bookmarks.forEach(function(item){
+                $scope.checkUrl(item.url).then(res=>{
+                    if(!res){
+                        let temp = $scope.bookmarks.find(mini=>mini.url == item.url)
+                        if(temp==undefined){
+                            $scope.bookmarks.push(item)
+                           
+                        }
+                    }
+                  });
+
+            })
+            
+        })
+
+     
+                           
+    }
+
+    $scope.delBadUrl =function(bookmarkId) {
+        var params = {
+            id: bookmarkId
+        }
+      
+        bookmarkService.delBookmark(params)
+            .then((data) => {
+                $("#" + bookmarkId).transition({
+                    animation: dataService.animation(),
+                    duration: 500,
+                    onComplete: function() {
+                        $("#" + bookmarkId).remove();
+                    }
+                });
+                
+                toastr.success(' 书签删除成功！', "提示");
+                location.reload();
+            })
+            .catch((err) => {
+                toastr.error( ' 书签删除失败！错误提示：' + JSON.stringify(err), "提示");
+            });
+    }
+
 
 
     // 添加搜索地址
