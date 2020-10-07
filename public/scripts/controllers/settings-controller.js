@@ -291,17 +291,20 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
         }
         
         bookmarkService.getBookmarksByTag(params).then(data=>{
-            // $scope.loadingUrls = true 
-            data.bookmarks.forEach(function(item){
+            $scope.loadingUrls = true 
+            data.bookmarks.forEach(function(item,index){
+                if(index === data.bookmarks.length-1){
+                    $scope.loadingUrls= false
+                }
                 $scope.checkUrl(item.url).then(res=>{
                     if(!res){
                         let temp = $scope.bookmarks.find(mini=>mini.url == item.url)
                         if(temp==undefined){
                             $scope.bookmarks.push(item)
-                           
                         }
                     }
                   });
+
 
             })
             
@@ -311,7 +314,9 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
                            
     }
 
+    // 删除链接
     $scope.delBadUrl =function(bookmarkId) {
+       if(window.confirm('你确定删除该链接吗?')){
         var params = {
             id: bookmarkId
         }
@@ -332,9 +337,31 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
             .catch((err) => {
                 toastr.error( ' 书签删除失败！错误提示：' + JSON.stringify(err), "提示");
             });
+       }
     }
 
-
+    $scope.delAllUrl = function(){
+        if(window.confirm(`你确定全部删除吗?`)){
+            $scope.bookmarks.forEach(function(item,index){
+                var params = {
+                    id: item.id 
+                }
+              
+                bookmarkService.delBookmark(params)
+                    .then((data) => {
+                      
+                    })
+                    .catch((err) => {
+                     
+                    });
+    
+                if(index === $scope.bookmarks.length-1){
+                    location.reload();
+                }    
+            })
+        }
+       
+    }    
 
     // 添加搜索地址
     $scope.addSearchUrl = function() {
