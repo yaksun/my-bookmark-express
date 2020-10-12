@@ -258,7 +258,6 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
     // 获取搜索链接
     function getSearchUrl(){
         bookmarkService.getSearchUrl().then(data=>{
-            console.log(data.res,'----------');
             $scope.searchUrl = data.res 
         })
         
@@ -285,18 +284,20 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
 
     function getUrlList(){
         let params={
-            currentPage:2,
+            currentPage:1,
             perPageItems:100,
             tagId:-1
         }
         
         bookmarkService.getBookmarksByTag(params).then(data=>{
-            $scope.loadingUrls = true 
+            // $scope.loadingUrls = true 
+            console.log(data,'----------');
             data.bookmarks.forEach(function(item,index){
-                if(index === data.bookmarks.length-1){
-                    $scope.loadingUrls= false
-                }
+                // if(index === data.bookmarks.length-1){
+                //     $scope.loadingUrls= false
+                // }
                 $scope.checkUrl(item.url).then(res=>{
+                   
                     if(!res){
                         let temp = $scope.bookmarks.find(mini=>mini.url == item.url)
                         if(temp==undefined){

@@ -858,6 +858,8 @@ db.getBookmarksTable = function(params) {
     })
 }
 
+
+
 db.getBookmarksByTag = function(params) {
     var tag_id = params.tagId;
     params.currentPage = params.currentPage || 1;
@@ -873,7 +875,7 @@ db.getBookmarksByTag = function(params) {
                 var bookmarks = [];
                 var begin = (params.currentPage - 1) * params.perPageItems;
                 var end = params.currentPage * params.perPageItems;
-
+              
                 result.sort((a, b) => {
                         var click1 = parseInt(a.click_count);
                         var click2 = parseInt(b.click_count);
