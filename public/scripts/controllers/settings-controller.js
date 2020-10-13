@@ -263,22 +263,23 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
         
     }
 
-    $scope.checkUrl = function (url) {
-        const promise = new Promise(function (resolve, reject) {
-          if (!url) reject('无效路径');
-          $.ajax({
-            url: url,
-            type: 'GET',
-            dataType: "jsonp", //跨域采用jsonp方式
-            complete: (response)=> {
-              if(response.status==200)
-                resolve(true)
-              else
-                resolve(false)
-            }
-          });
-        });
-        return promise;
+  $scope.checkUrl =function (url) {
+   
+            return new Promise((resolve,reject)=>{
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    dataType: "jsonp", //跨域采用jsonp方式
+                    complete:function(response){
+                       if(response.status === 200){
+                            resolve(true)
+                       }else{
+                           reject(false)
+                       }
+                    }
+                  });
+            })
+      
       }
       
 
@@ -291,27 +292,15 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
         
         bookmarkService.getBookmarksByTag(params).then(data=>{
             // $scope.loadingUrls = true 
-            console.log(data,'----------');
-            data.bookmarks.forEach(function(item,index){
-                // if(index === data.bookmarks.length-1){
-                //     $scope.loadingUrls= false
-                // }
-                $scope.checkUrl(item.url).then(res=>{
-                   
-                    if(!res){
-                        let temp = $scope.bookmarks.find(mini=>mini.url == item.url)
-                        if(temp==undefined){
-                            $scope.bookmarks.push(item)
-                        }
+            data.bookmarks.forEach(function(item){
+                $scope.checkUrl(item.url).catch(err=>{
+                    let temp= $scope.bookmarks.find(mini=>mini.url === item.url)
+                    if(temp == undefined){
+                     $scope.bookmarks.push(item)
                     }
-                  });
-
-
+                })            
             })
-            
-        })
-
-     
+        })    
                            
     }
 

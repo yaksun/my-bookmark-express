@@ -75,7 +75,7 @@ app.controller('editCtr', ['$scope', '$state', '$timeout', '$document', 'ngDialo
             url: $scope.url,
             title: $scope.title,
             public: $('.ui.checkbox.js-public').checkbox('is checked') ? '1' : '0',
-            tags: selectedTags,
+            tagId: selectedTags[0],
             description: $scope.description
         }
         if (!/http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/.test($scope.url)) {

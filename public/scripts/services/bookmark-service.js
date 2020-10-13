@@ -207,7 +207,7 @@ app.factory('bookmarkService', ['$http', '$q', function($http, $q) {
         addBookmark: function(params) {
             var def = $q.defer();
             $http.post('/api/addBookmark/', {
-                    params: params
+                   ...params
                 })
                 .success(function(data) {
                     def.resolve(data);
