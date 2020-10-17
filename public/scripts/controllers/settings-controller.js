@@ -132,15 +132,15 @@ app.controller('settingsCtr', ['$scope', '$stateParams', '$filter', '$state', '$
     // }
 
     
-    $scope.fresh=function(){  
-        if(location.href.indexOf("#reloaded")==-1){
-                    location.href=location.href+"#reloaded";
-                    location.reload();
-             }
-    }  
-    setTimeout(function(){
-        $scope.fresh()
-    },10);
+    // $scope.fresh=function(){  
+    //     if(location.href.indexOf("#reloaded")==-1){
+    //                 location.href=location.href+"#reloaded";
+    //                 location.reload();
+    //          }
+    // }  
+    // setTimeout(function(){
+    //     $scope.fresh()
+    // },10);
 
     $scope.changeForm($scope.form.indexOf(true)); // 马上调用一次
 

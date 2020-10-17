@@ -15,7 +15,6 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
 
 
 
-    getSearchUrl() 
 
     hotkeys.add({
         combo: 'ctrl+s',
@@ -71,6 +70,9 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
     pubSubService.subscribe('Common.menuActive', $scope, function (event, params) {
         console.log("subscribe Common.menuActive, login = " + params.login + ", index = " + params.index);
         $scope.login = (params && params.login) || false;
+        if( $scope.login ){
+            getSearchUrl()
+        }
         var index = $scope.login ? ($scope.selectLoginIndex = (params && params.index) || 0) : ($scope.selectNotLoginIndex = (params && params.index) || 0);
         updateMenuActive(index);
     });
@@ -95,6 +97,7 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
 
     
     function getSearchUrl(){
+      try {
         bookmarkService.getSearchUrl().then(data=>{
             $scope.searchUrl = data.res 
             window.sessionStorage.setItem('searchUrl',JSON.stringify(data.res))
@@ -104,7 +107,12 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
                 $scope.defaultId = temp.id 
             }
          
+        }).catch(()=>{
+            
         })
+      } catch (error) {
+          console.log(error)
+      }
     }
 
     $scope.toggleReady = function(ready) {
