@@ -489,6 +489,7 @@ db.getUser = function(username) {
             if (err) {
                 reject(err);
             } else {
+                console.log(result[0],'------------');
                 resolve(result[0]);
             }
         });

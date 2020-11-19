@@ -81,12 +81,13 @@ api.post('/login', function(req, res) {
     var params = req.body.params;
     var username = params.username;
     var password = md5(params.password);
-    console.log(password);
+    console.log(username,'-------------');
     db.getUser(username)
         .then((user) => {
             var ret = {
                 logined: false,
                 user: {},
+                session:{}
             }
             if (user && user.password === password) {
                 ret.logined = true;
