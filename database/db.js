@@ -424,20 +424,20 @@ db.updateSearchUrl = function(id, params) {
 
 
 
-db.register = function(user) {
-    console.log('register');
-    var sql = "INSERT INTO `users` (`username`, `password`, `email`) VALUES ('" + user.username + "', '" + user.password + "', '" + user.email + "')";
-    return new Promise(function(resolve, reject) {
-        client.query(sql, (err, result) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(result.affectedRows);
-                db.insertDefaultBookmarks(result.insertId);
-            }
-        });
-    });
-};
+// db.register = function(user) {
+//     console.log('register');
+//     var sql = "INSERT INTO `users` (`username`, `password`, `email`) VALUES ('" + user.username + "', '" + user.password + "', '" + user.email + "')";
+//     return new Promise(function(resolve, reject) {
+//         client.query(sql, (err, result) => {
+//             if (err) {
+//                 reject(err);
+//             } else {
+//                 resolve(result.affectedRows);
+//                 db.insertDefaultBookmarks(result.insertId);
+//             }
+//         });
+//     });
+// };
 
 db.insertDefaultBookmarks = function(userId) {
     var tags_name = ["常用", "未分类", "收藏"];

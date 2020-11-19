@@ -52,17 +52,17 @@ app.controller('loginCtr', ['$scope', '$filter', '$state', '$cookieStore', '$win
         }
     }
 
-    $scope.showRegister = function() {
-        $('.ui.modal.js-register').modal({
-            closable: false,
-        }).modal('setting', 'transition', dataService.animation()).modal('show');
+    // $scope.showRegister = function() {
+    //     $('.ui.modal.js-register').modal({
+    //         closable: false,
+    //     }).modal('setting', 'transition', dataService.animation()).modal('show');
 
-        $scope.emailRegister = "";
-        $scope.usernameRegister = "";
-        $scope.passwordRegister1 = "";
-        $scope.passwordRegister2 = "";
+    //     $scope.emailRegister = "";
+    //     $scope.usernameRegister = "";
+    //     $scope.passwordRegister1 = "";
+    //     $scope.passwordRegister2 = "";
 
-    }
+    // }
 
     $scope.register = function() {
         if (!$scope.emailRegister || !$scope.usernameRegister || !$scope.passwordRegister1 || !$scope.passwordRegister2) {
