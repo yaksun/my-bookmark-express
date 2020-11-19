@@ -18,6 +18,20 @@ code {
     vertical-align: baseline;
 }
 
+.beian{
+    height: auto;
+}
+.beian img{
+    display: inline-block;
+    height: 20px;
+    margin-right: 12px;
+}
+.beian div{
+    display: inline-block;
+}
+.beian span{
+    float: right;
+}
 .bookmark {
     white-space: nowrap;
     text-overflow: ellipsis;
