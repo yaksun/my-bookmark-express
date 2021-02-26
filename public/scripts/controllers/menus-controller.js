@@ -99,6 +99,7 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
     function getSearchUrl(){
       try {
         bookmarkService.getSearchUrl().then(data=>{
+          if(data.res){
             $scope.searchUrl = data.res 
             window.sessionStorage.setItem('searchUrl',JSON.stringify(data.res))
             $scope.initHotKeys(data.res)
@@ -106,6 +107,7 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
             if(temp){
                 $scope.defaultId = temp.id 
             }
+          }
          
         }).catch(()=>{
             
