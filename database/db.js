@@ -231,6 +231,7 @@ db.delTagsBookmarks = function(bookmarkIds) {
 
 db.addTagsBookmarks = function(tags, bookmard_id) {
     sql = "INSERT INTO `tags_bookmarks` (`tag_id`, `bookmark_id`) VALUES";
+    console.log(tags,'-----------')
     for (var i = 0; i < tags.length; i++) {
         if (i >= 1) {
             sql += ','

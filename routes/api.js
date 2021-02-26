@@ -472,7 +472,7 @@ api.post('/updateBookmark', function(req, res) {
     var bookmark = req.body.params;
     console.log(req.session.user,9999999999);
     var userId = req.session.user.id;
-    var tags = bookmark.tags;
+    var tags = [bookmark.tagId];
     var ret = {};
     bookmark.userId = userId;
     console.log('hello updateBookmark', JSON.stringify(bookmark));
