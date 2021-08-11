@@ -1,7 +1,7 @@
 app.controller('weixinArticleCtr', ['$scope', '$state', '$sce', '$stateParams', '$filter', '$window', '$timeout', '$document', 'ngDialog', 'bookmarkService', 'pubSubService', 'dataService', function($scope, $state, $sce, $stateParams, $filter, $window, $timeout, $document, ngDialog, bookmarkService, pubSubService, dataService) {
     console.log("Hello weixinArticleCtr...");
     if(dataService.smallDevice()){
-        $window.location = "http://192.168.1.211:9527/#/tags";
+        $window.location = "http://localhost:2000/#/tags";
         return;
     }
     var key = curentDate(undefined, "yyyyMMdd");

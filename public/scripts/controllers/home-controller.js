@@ -1,7 +1,7 @@
 app.controller('homeCtr', ['$scope', '$stateParams', '$filter', '$state', '$window', 'bookmarkService', 'pubSubService', 'dataService', function($scope, $stateParams, $filter, $state, $window, bookmarkService, pubSubService, dataService) {
     console.log('Hello homeCtr......');
     if(dataService.smallDevice()){
-        $window.location = "http://192.168.1.211:9527/#/tags";
+        $window.location = "http://localhost:2000/#/tags";
         return;
     }
     bookmarkService.autoLogin()

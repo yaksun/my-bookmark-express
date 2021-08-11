@@ -26,7 +26,7 @@ folders.forEach((folder) => {
 })
 
 
-// app.use('/api',createProxyMiddleware({ target: 'http://192.168.1.211:9527',changeOrigin: true}));
+// app.use('/api',createProxyMiddleware({ target: 'http://localhost:2000',changeOrigin: true}));
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -92,6 +92,6 @@ app.use(function (err, req, res, next) {
 api.getHotBookmarksByTimer();
 
 
-// app.use('/api',createProxyMiddleware({ target: 'http://192.168.1.211:9527', changeOrigin: true }));
+// app.use('/api',createProxyMiddleware({ target: 'http://localhost:2000', changeOrigin: true }));
 
 module.exports = app;
