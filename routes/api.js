@@ -61,7 +61,7 @@ api.post('/clickBookmark', function(req, res) {
 api.post('/jumpQuickUrl', function(req, res) {
     console.log("jumpQuickUrl username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
     db.getBookmarkbyUrl(req.session.user.id, req.body.params.url)
@@ -108,7 +108,7 @@ api.post('/login', function(req, res) {
 api.get('/userInfo', function(req, res) {
     console.log("userInfo username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
     var user = {};
@@ -153,7 +153,7 @@ api.post('/register', function(req, res) {
 api.post('/resetPassword', function(req, res) {
     console.log("resetPassword username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
 
@@ -191,7 +191,7 @@ api.post('/resetPassword', function(req, res) {
 api.post('/updateShowStyle', function(req, res) {
     console.log("updateShowStyle username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
 
@@ -226,7 +226,7 @@ api.post('/updateShowStyle', function(req, res) {
 api.post('/updateSearchHistory', function(req, res) {
     console.log("updateSearchHistory username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
 
@@ -257,7 +257,7 @@ api.post('/updateSearchHistory', function(req, res) {
 api.post('/updateQuickUrl', function(req, res) {
     console.log("updateQuickUrl username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
 
@@ -289,7 +289,7 @@ api.post('/updateQuickUrl', function(req, res) {
 api.get('/getSearchUrl',function(req,res){
    
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
   
@@ -318,7 +318,7 @@ api.get('/getSearchUrl',function(req,res){
 // 添加搜索引擎
 api.post('/addSearchUrl', function(req, res) {
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
 
@@ -354,7 +354,7 @@ api.post('/addSearchUrl', function(req, res) {
 
 api.post('/delSearchUrl', function(req, res) {
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
   
@@ -377,7 +377,7 @@ api.post('/delSearchUrl', function(req, res) {
 api.post('/updateSearchUrl', function(req, res) {
     console.log("updateSearchUrl username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
 
@@ -439,7 +439,7 @@ api.get('/autoLogin', function(req, res) {
 api.delete('/delBookmark', function(req, res) {
     console.log("delBookmark username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
     var bookmarkId = req.query.id;
@@ -465,7 +465,7 @@ api.delete('/delBookmark', function(req, res) {
 api.post('/updateBookmark', function(req, res) {
     console.log("updateBookmark username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
 
@@ -495,7 +495,7 @@ api.post('/updateBookmark', function(req, res) {
 api.get('/bookmark', function(req, res) {
     console.log("bookmark username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
     var bookmarkId = req.query.bookmarkId;
@@ -525,7 +525,7 @@ api.get('/bookmark', function(req, res) {
 api.get('/bookmarks', function(req, res) {
     console.log("bookmarks username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
     var userId = req.session.user.id;
@@ -663,7 +663,7 @@ api.get('/hotBookmarks', function(req, res) {
 api.get('/bookmarksByTag', function(req, res) {
     console.log("bookmarksByTag username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
     var userId = req.session.user.id;
@@ -713,7 +713,7 @@ api.get('/bookmarksByTag', function(req, res) {
 api.get('/searchBookmarks', function(req, res) {
     console.log("searchBookmarks username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
     var params = req.query;
@@ -781,7 +781,7 @@ api.get('/searchBookmarks', function(req, res) {
 api.get('/searchHotBookmarks', function(req, res) {
     console.log("searchHotBookmarks username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
     var params = req.query;
@@ -795,7 +795,7 @@ api.get('/searchHotBookmarks', function(req, res) {
 api.get('/tags', function(req, res) {
     console.log("tags username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
     db.getTags(req.session.user.id)
@@ -829,7 +829,7 @@ api.get('/tags', function(req, res) {
 api.get('/advices', function(req, res) {
     console.log("advices username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
     var params = req.query;
@@ -841,7 +841,7 @@ api.get('/advices', function(req, res) {
 api.post('/addAdvice', function(req, res) {
     console.log("addAdvice username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
 
@@ -869,7 +869,7 @@ api.post('/addAdvice', function(req, res) {
 api.post('/uploadBookmarkFile', upload.single('bookmark'), function(req, res) {
     console.log("uploadBookmarkFile username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
 
@@ -955,7 +955,7 @@ api.post('/uploadBookmarkFile', upload.single('bookmark'), function(req, res) {
 
 api.post('/addBookmark', function(req, res) {
     if (!req.session.username) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
     var bookmark = req.body;
@@ -1008,7 +1008,7 @@ api.post('/addBookmark', function(req, res) {
 api.post('/favoriteBookmark', function(req, res) {
     console.log("favoriteBookmark username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
     var bookmark = req.body.params;
@@ -1064,7 +1064,7 @@ api.post('/favoriteBookmark', function(req, res) {
 api.post('/addTags', function(req, res) {
     console.log("addTags username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
     var tagsName = req.body.params;
@@ -1093,7 +1093,7 @@ api.post('/addTags', function(req, res) {
 api.post('/updateTagName', function(req, res) {
     console.log("updateTagName username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
     var tag = req.body.params;
@@ -1136,7 +1136,7 @@ api.post('/updateTagName', function(req, res) {
 api.post('/updateTagShow', function(req, res) {
     console.log("updateTagShow username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
     var tag = req.body.params;
@@ -1179,7 +1179,7 @@ api.post('/updateTagShow', function(req, res) {
 api.post('/updateTagsIndex', function(req, res) {
     console.log("updateTagsIndex username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
     var tagsIndex = req.body.params;
@@ -1216,7 +1216,7 @@ api.post('/delTag', function(req, res) {
         return;
     }
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
     var tag = req.body.params;
@@ -1570,7 +1570,7 @@ api.getHotBookmarksByTimer = function() {
 api.post('/addNote', function(req, res) {
     console.log("addNote username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
 
@@ -1603,7 +1603,7 @@ api.get('/notes', function(req, res) {
 
     var params = req.query;
     if (!params.shareNote && !req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
     if (params.shareNote) {
@@ -1615,7 +1615,7 @@ api.get('/notes', function(req, res) {
           db.getNote(params.shareNote)
           .then((data) => {
               data = xss(data);
-              res.send(`
+              res.sendStatus(`
           <body style="margin:0px;height:100%;">
             <head>
               <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
@@ -1647,7 +1647,7 @@ api.get('/notes', function(req, res) {
 api.delete('/delNote', function(req, res) {
     console.log("delBookmark username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
     var noteId = req.query.id;
@@ -1666,7 +1666,7 @@ api.delete('/delNote', function(req, res) {
 api.post('/updateNote', function(req, res) {
     console.log("updateNote username = ", req.session.username);
     if (!req.session.user) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
 
@@ -1687,7 +1687,7 @@ api.post('/updateNote', function(req, res) {
 api.post('/updateNotePublic', function(req, res) {
   console.log("updateNotePublic username = ", req.session.username);
   if (!req.session.user) {
-      res.send(401);
+      res.sendStatus(401);
       return;
   }
 
@@ -1713,7 +1713,7 @@ api.get('/download', function(req, res) {
     var userId = req.query.userId;
     var type = req.query.type;
     if (!req.session.user || req.session.user.id != userId) {
-        res.send(401);
+        res.sendStatus(401);
         return;
     }
     if (type == 'exportbookmark' && userId) {
@@ -1764,7 +1764,7 @@ api.get('/download', function(req, res) {
                 console.log('exportbookmark err', err);
             });
     } else {
-        res.send(401);
+        res.sendStatus(401);
     }
 });
 
