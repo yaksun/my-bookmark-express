@@ -57,7 +57,7 @@
             <p>
                 对不起，您的风筝已掉线，请时光倒流回前一秒。<br>
                 <span id="totalSecond">5</span>秒后自动
-                <a href="http://http://192.168.1.211:9527" class="backhome"><span>返回首页</span></a>
+                <a href="http://139.224.195.82:8090" class="backhome"><span>返回首页</span></a>
             </p>
         </div>
     </div>
@@ -72,7 +72,7 @@
     }
     setInterval(function(){
         if (second < 0) {
-            location.href = 'http://http://192.168.1.211:9527';
+            location.href = 'http://139.224.195.82:8090';
         } else {
             if (navigator.appName.indexOf("Explorer") > -1) {
                 document.getElementById('totalSecond').innerText = second--;

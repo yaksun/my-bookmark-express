@@ -26,7 +26,7 @@ folders.forEach((folder) => {
 })
 
 
-// app.use('/api',createProxyMiddleware({ target: 'http://192.168.1.211:9527',changeOrigin: true}));
+// app.use('/api',createProxyMiddleware({ target: 'http://139.224.195.82:8090',changeOrigin: true}));
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -39,7 +39,8 @@ app.use(cookieParser('secret'));
 app.use(session({
   store: new RedisStore({
     host: "127.0.0.1",
-    port: 6379
+    port: 6379,
+    //auth_pass:'123456'
   
   }),
   cookie: {
@@ -92,6 +93,6 @@ app.use(function (err, req, res, next) {
 api.getHotBookmarksByTimer();
 
 
-// app.use('/api',createProxyMiddleware({ target: 'http://192.168.1.211:9527', changeOrigin: true }));
+// app.use('/api',createProxyMiddleware({ target: 'http://139.224.195.82:8090', changeOrigin: true }));
 
 module.exports = app;

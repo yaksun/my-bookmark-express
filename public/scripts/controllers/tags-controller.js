@@ -1,7 +1,7 @@
 app.controller('tagsCtr', ['$scope', '$filter', '$state', '$window', '$stateParams', '$timeout', '$document', 'ngDialog', 'bookmarkService', 'pubSubService', 'dataService', function ($scope, $filter, $state, $window, $stateParams, $timeout, $document, ngDialog, bookmarkService, pubSubService, dataService) {
     console.log("Hello tagsCtr...", $stateParams);
     if(dataService.smallDevice()){
-        $window.location = "http://192.168.1.211:9527/#/tags";
+        $window.location = "http://139.224.195.82:8090/#/tags";
         return;
     }
 
