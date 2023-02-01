@@ -7,7 +7,7 @@ module.exports = {
         database: 'mybookmarks',
         multipleStatements: true,
         useConnectionPooling: true,
-       // port: 8081,
+        //port: 8081,
         port:3306
     }
 }
