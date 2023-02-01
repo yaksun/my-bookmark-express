@@ -34,6 +34,7 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(cookieParser('secret'));
 // 线上不需要redis密码auth_pass:'123456'
 app.use(session({
@@ -50,9 +51,6 @@ app.use(session({
   saveUninitialized: true,
   secret: secret
 }))
-
-app.use(express.static(path.join(__dirname, 'public')));
-
 app.use('/api', api);
 
 // catch 404 and forward to error handler
@@ -80,7 +78,7 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function (err, req, res, next) {
   res.status(err.status || 500);
-  res.sendFile("./public/404.html");
+  res.sendFile("404.html");
   // res.render('error', {
   //     message: err.message,
   //     error: {}
