@@ -54,11 +54,11 @@ app.use(session({
 app.use('/api', api);
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
+// app.use(function (req, res, next) {
+//   var err = new Error('Not Found');
+//   err.status = 404;
+//   next(err);
+// });
 
 // error handlers
 
@@ -75,14 +75,14 @@ app.use(function (req, res, next) {
 // }
 // production error handler
 // no stacktraces leaked to user
-app.use(function (err, req, res, next) {
-  res.status(err.status || 500);
-  res.sendFile(path.join(__dirname,"public/404.html"));
-  // res.render('error', {
-  //     message: err.message,
-  //     error: {}
-  // }); 
-});
+// app.use(function (err, req, res, next) {
+//   res.status(err.status || 500);
+//   res.sendFile(path.join(__dirname,"public/404.html"));
+//   // res.render('error', {
+//   //     message: err.message,
+//   //     error: {}
+//   // }); 
+// });
 
 // 卡片这模式就没怎么用过，干掉了。
 // api.checkSnapFaviconState();
