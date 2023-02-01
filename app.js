@@ -78,11 +78,12 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function (err, req, res, next) {
   res.status(err.status || 500);
-  res.sendFile("404.html");
+  res.sendFile(path.join(__dirname,"public/404.html"));
   // res.render('error', {
   //     message: err.message,
   //     error: {}
   // });
+  return ;
 });
 // 卡片这模式就没怎么用过，干掉了。
 // api.checkSnapFaviconState();
