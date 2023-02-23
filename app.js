@@ -39,7 +39,8 @@ app.use(cookieParser('secret'));
 app.use(session({
   store: new RedisStore({
     host: "127.0.0.1",
-    port: 6379
+    port: 6379,
+    // auth_pass:'123456'
   
   }),
   cookie: {
