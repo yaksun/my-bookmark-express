@@ -491,6 +491,20 @@ db.insertSearchUrls = function(userId){
             "icon_class":"iconfont icongitee",
             "quick_key":"ctrl+e",
             "default":"0"
+        },
+        {
+            "title":"雪球",
+            "search_url":"https://xueqiu.com/k?q={keyword}",
+            "icon_class":"volleyball ball icon",
+            "quick_key":"ctrl+x",
+            "default":"0"
+        },
+        {
+            "title":"东方财富",
+            "search_url":"https://so.eastmoney.com/web/s?keyword={keyword}",
+            "icon_class":"etsy icon",
+            "quick_key":"ctrl+d",
+            "default":"0"
         }
     ]
 
