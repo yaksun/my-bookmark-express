@@ -37,7 +37,7 @@ jspm_packages
 .node_repl_history
 
 # Upload File
-uploads
+# uploads
 /public/images/snap/
 /public/images/favicon/
 .tags
