@@ -392,6 +392,29 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
             });
     }, 1000)
 
+    $timeout(function () {
+        $('.add_bookmark')
+            .popup({
+                title: '',
+                position: 'bottom center',
+                variation: "very wide",
+                html: "添加书签，可按Insert快速打开添加页面"
+            });
+    }, 1000)
+
+    $timeout(function () {
+        $('.logout')
+            .popup({
+                title: '',
+                position: 'bottom center',
+                variation: "very wide",
+                html: "退出登陆"
+            });
+    }, 1000)
+
+
+
+    // data-tooltip="添加书签，可按Insert快速打开添加页面"
     // 在输入文字的时候也会触发，所以不要用Ctrl,Shift之类的按键
     $document.bind("keydown", function (event) {
         $scope.$apply(function () {
