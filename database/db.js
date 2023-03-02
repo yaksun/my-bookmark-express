@@ -362,7 +362,7 @@ db.getSearchUrl = function(userId){
 
 // 添加搜索链接
 db.addSearchUrl = function(userId, params) {
-    var sql = "INSERT INTO `setting_search` (`user_id`, `title`, `search_url`,`icon_class`,`quick_key`,`default`) VALUES ('" + userId + "', " + client.escape(params.title) + ", "+ client.escape(params.search_url) + ", " + client.escape(params.icon_class) +", "+ client.escape(params.quick_key) +", "+ 1 + ")";
+    var sql = "INSERT INTO `setting_search` (`user_id`, `title`, `search_url`,`icon_class`,`quick_key`,`default`) VALUES ('" + userId + "', " + client.escape(params.title) + ", "+ client.escape(params.search_url) + ", " + client.escape(params.icon_class) +", "+ client.escape(params.quick_key) +", "+ 0 + ")";
     console.log('addSearchUrl', sql);
     return new Promise(function(resolve, reject) {
         client.query(sql, (err, result) => {
@@ -435,10 +435,69 @@ db.register = function(user) {
             } else {
                 resolve(result.affectedRows);
                 db.insertDefaultBookmarks(result.insertId);
+                db.insertSearchUrls(result.insertId);
             }
         });
     });
 };
+
+db.insertSearchUrls = function(userId){
+    var searchUrls=[
+        {
+            "title":"google一下",
+            "search_url":"https://www.google.com/search?q={keyword}&oq={keyword}&sourceid=chrome&ie=UTF-8",
+            "icon_class":"google link icon",
+            "quick_key":"ctrl+g",
+            "default":"0"
+        },
+        {
+            "title":"github搜索",
+            "search_url":"https://github.com/search?q={keyword}",
+            "icon_class":"github link icon",
+            "quick_key":"ctrl+h",
+            "default":"0"
+        },
+        {
+            "title":"必应",
+            "search_url":"https://cn.bing.com/search?q={keyword}",
+            "icon_class":"iconfont iconbiying",
+            "quick_key":"ctrl+y",
+            "default":"0"
+        },
+        {
+            "title":"stackoverflow",
+            "search_url":"https://stackoverflow.com/search?q={keyword}",
+            "icon_class":"stack overflow link icon",
+            "quick_key":"ctrl+k",
+            "default":"0"
+        },
+        {
+            "title":"百度一下",
+            "search_url":"http://www.baidu.com/s?wd={keyword}",
+            "icon_class":"bimobject link icon",
+            "quick_key":"ctrl+b",
+            "default":"0"
+        },
+        {
+            "title":"头条",
+            "search_url":"https://www.toutiao.com/search/?keyword={keyword}",
+            "icon_class":"iconfont iconziyuan",
+            "quick_key":"ctrl+o",
+            "default":"0"
+        },
+        {
+            "title":"gitee",
+            "search_url":"https://search.gitee.com/?q={keyword}",
+            "icon_class":"iconfont icongitee",
+            "quick_key":"ctrl+e",
+            "default":"0"
+        }
+    ]
+
+    searchUrls.forEach(t=>{
+        db.addSearchUrl(userId,t);
+    })
+}
 
 db.insertDefaultBookmarks = function(userId) {
     var tags_name = ["常用", "未分类", "收藏"];
