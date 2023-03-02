@@ -292,6 +292,24 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
         });
     }
 
+    $scope.handleDownLoad = function () {
+        // bookmarkService.downloadZip({})
+        // .then((data) => {
+        //     console.log('download..........', data)
+        // })
+        // .catch((err) => console.log('download err', err));
+
+        var fileName="插件";
+        const a = document.createElement('a');
+	    a.style.display = 'none';
+	    a.setAttribute('target', '_blank');
+	    fileName && a.setAttribute('download', fileName);
+	    a.href = "/api/downloadZip";
+	    document.body.appendChild(a);
+	    a.click();
+	    document.body.removeChild(a);
+    }
+
     $scope.logout = function () {
         bookmarkService.logout({})
             .then((data) => {
@@ -399,6 +417,17 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
                 position: 'bottom center',
                 variation: "very wide",
                 html: "添加书签，可按Insert快速打开添加页面"
+            });
+    }, 1000)
+
+
+    $timeout(function () {
+        $('.download_tip')
+            .popup({
+                title: '点击下载',
+                position: 'bottom center',
+                variation: "very wide",
+                html: "<span><span class='fontred'>插件使用提示：</span><br/>01、点击下载压缩包，解压到本地<br/>02、打开Chrome设置界面，点击扩展程序<br/>03、点击加载已解压的扩展程序，选择之前解压的文件夹<br/></span>"
             });
     }, 1000)
 

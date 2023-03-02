@@ -1706,6 +1706,18 @@ api.post('/updateNotePublic', function(req, res) {
 })
 
 
+api.get("/downloadZip",function(req,res){
+    var fileName="bookmark-plugin-master.zip";
+    var filePath = path.join(path.resolve(__dirname, '..'), 'uploads', fileName);
+    res.download(filePath, function(err) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('download filePath[ ' + filePath + ' ]success!');
+        }
+    });
+})
+
 // 实现文件下载
 api.get('/download', function(req, res) {
     console.log("download username = ", req.session.username);

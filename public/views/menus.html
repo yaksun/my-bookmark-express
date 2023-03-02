@@ -63,15 +63,17 @@
                         <span style="margin: 0px 5px">▏</span>
                     </span>
                     <span  class="add_bookmark" ng-click="showAddBookmarkMoadl()">
-                        <i class="add square link icon" style="cursor:default;margin-right: 8px;margin-left: 1px;"></i>
+                        <i class="add square link icon" style="cursor:pointer;margin-right: 8px;margin-left: 1px;"></i>
                     </span>
-
+                    <span  class="download_tip" ng-click="handleDownLoad()">
+                        <i class="download icon" style="cursor:pointer;margin-right: 8px;margin-left: 1px;"></i>
+                    </span>
                     <span class="suggest" ng-click="showUpdate()" ng-show="user.username !== 'lcq'">
-                        <i class="info circle link icon" style="cursor:default;margin-right: 8px;"></i>
+                        <i class="info circle link icon" style="cursor:pointer;margin-right: 8px;"></i>
                     </span>
 
                     <span class="logout"  ng-click="logout()">
-                        <i class="sign out link icon" style="cursor:default;margin-right: 8px;"></i>
+                        <i class="sign out link icon" style="cursor:pointer;margin-right: 8px;"></i>
                     </span>
                 </div>
             </div>

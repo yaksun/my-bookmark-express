@@ -555,6 +555,19 @@ app.factory('bookmarkService', ['$http', '$q', function($http, $q) {
                 });
             return def.promise;
         },
+        downloadZip: function(params) {
+            var def = $q.defer();
+            $http.get('/api/downloadZip/', {
+                    params: params
+                })
+                .success(function(data) {
+                    def.resolve(data);
+                })
+                .error(function(data) {
+                    def.reject(data);
+                });
+            return def.promise;
+        },
     };
 
     return service;
