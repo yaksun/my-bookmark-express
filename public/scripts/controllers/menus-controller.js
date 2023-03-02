@@ -408,31 +408,22 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
                 variation: "very wide",
                 html: "<span><span class='fontred'>特别提示：对照更新日志，如果有更新，请按 Ctrl+F5 强制更新或者清理浏览器缓存！<br/>点击该按钮即可查看更新日志！</span><br/>01、在任意页面，按A键添加备忘录。<br/>02、在热门收藏页面，按R键随机查看热门收藏。<br/>03、在任意页面，按数字键切换菜单栏。<br/>04、在书签页面鼠标放在书签上，按C复制书签链接<br/>05、在书签页面鼠标放在书签上，按E编辑书签<br/>06、在书签页面鼠标放在书签上，按D删除书签<br/>07、在书签页面鼠标放在书签上，按I查看书签详情<br/>08、在任意页面，按INSERT做添加书签<br/>09、在任意页面，按ESC退出弹窗<br/>10、当搜索框输入内容后,按下ctrl+g或enter跳转到google搜索<br/>11、当搜索框输入内容后,按下ctrl+d跳转到百度搜索<br/>12、当搜索框输入内容后,按下ctrl+b跳转到必应搜索<br/>13、当搜索框输入内容后,按下ctrl+h跳转到github搜索<br/>14、当搜索框输入内容后,按下ctrl+s跳转到书签搜索<br/>15、当搜索框输入内容后,按下ctrl+m跳转到备忘录搜索<br/>16、当搜索框输入内容后,按下ctrl+z跳转到栈溢出搜索<br/>17、当搜索框输入内容后,按下ctrl+j跳转到今日头条搜索<br/>18、当搜索框输入内容后,按下ctrl+i跳转到gitee搜索<br/></span>"
             });
-    }, 1000)
-
-    $timeout(function () {
-        $('.add_bookmark')
+            $('.add_bookmark')
             .popup({
                 title: '',
                 position: 'bottom center',
                 variation: "very wide",
                 html: "添加书签，可按Insert快速打开添加页面"
             });
-    }, 1000)
-
-
-    $timeout(function () {
-        $('.download_tip')
+            $('.download_tip')
             .popup({
                 title: '点击下载',
                 position: 'bottom center',
                 variation: "very wide",
                 html: "<span><span class='fontred'>插件使用提示：</span><br/>01、点击下载压缩包，解压到本地<br/>02、打开Chrome设置界面，点击扩展程序<br/>03、点击加载已解压的扩展程序，选择之前解压的文件夹<br/></span>"
             });
-    }, 1000)
 
-    $timeout(function () {
-        $('.logout')
+            $('.logout')
             .popup({
                 title: '',
                 position: 'bottom center',
@@ -440,7 +431,6 @@ app.controller('menuCtr', ['$scope','$stateParams', '$state', '$window', '$timeo
                 html: "退出登陆"
             });
     }, 1000)
-
 
 
     // data-tooltip="添加书签，可按Insert快速打开添加页面"
